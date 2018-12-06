@@ -1,0 +1,193 @@
+.casawplg-meta-row{
+	width: 100%;
+}
+#postbox-container-2 .casawplg-meta-col{
+	width: 50%;
+	float:left;
+}
+#postbox-container-1 .casawplg-meta-col{
+	width: 100%;
+	float:none;
+}
+@media screen and (max-width:782px) {
+	#postbox-container-2 .casawplg-meta-col{
+		width: 100%;
+		float:none;
+	}
+}
+
+.comlexmanager-polyhelper{
+	overflow: auto;
+}
+
+
+
+
+//file upload
+.clg-file-uploader {
+	position: relative;
+	line-height: 1.5em;
+}
+.clg-file-uploader .has-file {
+	display: none;
+	float: left;
+}
+
+.clg-file-uploader .no-file {
+	display: block;
+}
+
+.clg-file-uploader.active .has-file {
+	display: block;
+}
+
+.clg-file-uploader.active .no-file {
+	display: none;
+}
+
+.clg-file-uploader li {
+	position: relative;
+	margin: 0 10px 0 0;
+}
+
+.clg-file-uploader img {
+	min-height: 60px;
+	min-width: 46px;
+	/*box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);*/
+	display: block;
+	/*background: #f1f1f1;*/
+	background: transparent;
+}
+
+.clg-file-uploader input.button {
+	width: auto;
+}
+
+.clg-file-uploader a {
+	text-decoration: none;
+}
+
+.clg-file-uploader p {
+	margin: 0 0 4px 10px;
+}
+
+
+/*
+*  Hover
+*/
+
+.clg-file-uploader .hover {
+	
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	
+	-webkit-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
+	-moz-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
+	-o-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s; 	
+	transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s; 
+	
+	visibility: hidden;
+	opacity: 0;
+	
+	//background-color: red;
+	//height: 20px;
+}
+
+.clg-file-uploader .has-file:hover .hover {
+	-webkit-transition-delay:0s;
+	-moz-transition-delay:0s;
+	-o-transition-delay:0s;
+	transition-delay:0s;
+	
+	visibility: visible;
+	opacity: 1;
+}
+
+.clg-file-uploader .hover ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.clg-file-uploader .hover ul li {
+	margin: 0 0 3px 0;
+}
+
+
+
+/*--------------------------------------------------------------------------
+*
+*	CXM add / remove
+*	
+*-------------------------------------------------------------------------*/
+
+.clg-button-add,
+.clg-button-remove,
+.clg-button-edit,
+.clg-button-delete {
+	background-color: #fff;
+    display: block;
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    
+    -webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none; 	
+	transition: none;
+
+	
+}
+
+.clg-button-add i,
+.clg-button-remove i,
+.clg-button-edit i,
+.clg-button-delete i{
+	display: block;
+	font-family: FontAwesome;
+	font-size: 10px;
+	line-height: 10px;
+	height: 22px;
+	width: 22px;
+}
+
+.clg-button-edit,
+.clg-button-delete {
+	width: 22px;
+	height: 22px;
+	border-radius: 11px;
+}
+
+.clg-button-add:hover {
+	background-position: -16px -166px;
+}
+
+.clg-button-remove {
+	background-position: -66px -116px;
+}
+
+.clg-button-remove:hover {
+	background-position: -66px -166px;
+}
+
+.clg-button-edit {
+	background-position: -14px -214px;
+}
+
+.clg-button-edit i {
+	content: '\\f015';
+}
+
+.clg-button-edit:hover {
+	background-position: -14px -264px;
+}
+
+.clg-button-delete {
+	background-position: -64px -214px;
+}
+
+.clg-button-delete:hover {
+	background-position: -64px -264px;
+}
