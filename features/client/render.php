@@ -202,8 +202,13 @@ class render extends Feature {
 	                </div>
 	            </div>
 	            <div class="casawp-lg_range">
+	                <span><?php echo __('Property surface', 'casawplg') ?> (m<sup>2</sup>)</span>
+	                <input type="range" min="1" max="1500" step="1" value="500" name="extra_data[Grundstücksfläche]" data-rangeslider>
+	                <div class="clearfix"></div>
+	            </div>
+	            <div class="casawp-lg_range">
 	                <span><?php echo __('Net living area', 'casawplg') ?> (m<sup>2</sup>)</span>
-	                <input type="range" min="10" max="1000" step="10" value="300" name="extra_data[Nettowohnfläche]" data-rangeslider>
+	                <input type="range" min="1" max="300" step="1" value="300" name="extra_data[Nettowohnfläche]" data-rangeslider>
 	                <div class="clearfix"></div>
 	            </div>
 	            <div class="casawp-lg_range">
@@ -212,13 +217,8 @@ class render extends Feature {
 	                <div class="clearfix"></div>
 	            </div>
 	            <div class="casawp-lg_range">
-	                <span><?php echo __('Number of bathrooms', 'casawplg') ?></span>
-	                <input type="range" min="1" max="10" step="1" value="2" name="extra_data[Anzahl Badezimmer]" data-rangeslider>
-	                <div class="clearfix"></div>
-	            </div>
-	            <div class="casawp-lg_range">
 	                <span><?php echo __('Building year', 'casawplg') ?></span>
-	                <input type="range" min="<?php echo date("Y") - 100; ?>" max="<?php echo date("Y"); ?>" step="1" value="<?php echo date("Y") - 20; ?>" name="extra_data[Baujahr]" data-rangeslider>
+	                <input type="range" min="<?php echo date("Y") - 100; ?>" max="<?php echo date("Y") + 4; ?>" step="1" value="<?php echo date("Y") - 20; ?>" name="extra_data[Baujahr]" data-rangeslider>
 	                <div class="clearfix"></div>
 	            </div>
 	        </div>

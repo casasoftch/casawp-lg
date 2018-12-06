@@ -2,216 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Starter Kit 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-04 14:55+0200\n"
-"PO-Revision-Date: 2017-10-04 14:56+0200\n"
+"POT-Creation-Date: 2018-12-06 13:35+0100\n"
+"PO-Revision-Date: 2018-12-06 13:40+0100\n"
 "Last-Translator: Jens Stalder <js@casasoft.ch>\n"
 "Language-Team: aut0poietic\n"
-"Language: en_US\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPathExcluded-0: ../assets/src\n"
-
-#: ../assets/acf/assets/js/acf-field-group.js:458
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "title_is_required"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:519
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "move_to_trash"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:878
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-#: ../assets/acf/admin/field-group.php:278
-#: ../assets/acf/api/api-field-group.php:667
-msgid "copy"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:988
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "move_field_warning"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:996
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "move_field"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1434
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "field_name_start"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1667
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "sibling_fields"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1667
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "parent_fields"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1709
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "no_fields"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1764
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-#: ../assets/acf/admin/field-group.php:275
-msgid "checked"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1801
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-msgid "null"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-field-group.js:1970
-#: ../assets/acf/assets/js/acf-field-group.js:2096
-#: ../assets/acf/assets/js/acf-field-group.min.js:1
-#: ../assets/acf/admin/field-group.php:279
-#: ../assets/acf/admin/views/field-group-field-conditional-logic.php:55
-#: ../assets/acf/admin/views/field-group-field-conditional-logic.php:155
-#: ../assets/acf/admin/views/field-group-locations.php:68
-#: ../assets/acf/admin/views/field-group-locations.php:144
-#: ../assets/acf/api/api-helpers.php:4052
-msgid "or"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:3175
-#: ../assets/acf/assets/js/acf-input.min.js:1
-msgid "unload"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:4648
-#: ../assets/acf/assets/js/acf-input.min.js:1
-msgid "date_picker"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:4880
-#: ../assets/acf/assets/js/acf-input.js:10278
-#: ../assets/acf/assets/js/acf-input.min.js:1
-#: ../assets/acf/assets/js/acf-input.min.js:3
-msgid "date_time_picker"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:5254
-#: ../assets/acf/assets/js/acf-input.js:5361
-#: ../assets/acf/assets/js/acf-input.js:5362
-#: ../assets/acf/assets/js/acf-input.min.js:1
-msgid "file"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:6113
-#: ../assets/acf/assets/js/acf-input.min.js:2
-msgid "google_map"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:6478
-#: ../assets/acf/assets/js/acf-input.js:6585
-#: ../assets/acf/assets/js/acf-input.js:6586
-#: ../assets/acf/assets/js/acf-input.js:7040
-#: ../assets/acf/assets/js/acf-input.js:7116
-#: ../assets/acf/assets/js/acf-input.min.js:2
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:2127
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:2128
-#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
-msgid "image"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:6837
-#: ../assets/acf/assets/js/acf-input.js:6852
-#: ../assets/acf/assets/js/acf-input.min.js:2
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:1486
-#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
-msgid "media"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:7587
-#: ../assets/acf/assets/js/acf-input.min.js:2
-msgid "restricted"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:7671
-#: ../assets/acf/assets/js/acf-input.min.js:2
-msgid "expand_details"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:7672
-#: ../assets/acf/assets/js/acf-input.min.js:2
-msgid "collapse_details"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:8350
-#: ../assets/acf/assets/js/acf-input.js:8392
-#: ../assets/acf/assets/js/acf-input.js:8566
-#: ../assets/acf/assets/js/acf-input.min.js:2
-msgid "relationship"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:8711
-#: ../assets/acf/assets/js/acf-input.min.js:2
-msgid "select"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:11511
-#: ../assets/acf/assets/js/acf-input.min.js:3
-msgid "validation_successful"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:11601
-#: ../assets/acf/assets/js/acf-input.min.js:3
-msgid "validation_failed"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:11667
-#: ../assets/acf/assets/js/acf-input.min.js:3
-msgid "validation_failed_1"
-msgstr ""
-
-#: ../assets/acf/assets/js/acf-input.js:11671
-#: ../assets/acf/assets/js/acf-input.min.js:3
-msgid "validation_failed_2"
-msgstr ""
-
-#: ../assets/acf/pro/assets/js/acf-pro-field-group.js:393
-#: ../assets/acf/pro/assets/js/acf-pro-field-group.min.js:1
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:516
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:521
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:548
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:554
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:589
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:594
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:595
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:618
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:624
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:625
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:825
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:833
-#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
-msgid "flexible_content"
-msgstr ""
-
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:116
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:172
-#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
-msgid "repeater"
-msgstr ""
-
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:1511
-#: ../assets/acf/pro/assets/js/acf-pro-input.js:1526
-#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
-msgid "gallery"
-msgstr ""
 
 #: ../assets/acf/acf.php:60
 msgid "Advanced Custom Fields"
@@ -307,7 +112,7 @@ msgstr ""
 
 #: ../assets/acf/admin/admin.php:113
 #: ../assets/acf/admin/views/field-group-options.php:114
-#: ../features/admin/unit_metabox.php:379
+#: ../features/admin/unit_metabox.php:436
 msgid "Custom Fields"
 msgstr "Eigene Felder"
 
@@ -353,12 +158,37 @@ msgstr ""
 msgid "Move to trash. Are you sure?"
 msgstr ""
 
+#: ../assets/acf/admin/field-group.php:275
+#: ../assets/acf/assets/js/acf-field-group.js:1764
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "checked"
+msgstr ""
+
 #: ../assets/acf/admin/field-group.php:276
 msgid "No toggle fields available"
 msgstr ""
 
 #: ../assets/acf/admin/field-group.php:277
 msgid "Field group title is required"
+msgstr ""
+
+#: ../assets/acf/admin/field-group.php:278
+#: ../assets/acf/api/api-field-group.php:667
+#: ../assets/acf/assets/js/acf-field-group.js:878
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "copy"
+msgstr ""
+
+#: ../assets/acf/admin/field-group.php:279
+#: ../assets/acf/admin/views/field-group-field-conditional-logic.php:55
+#: ../assets/acf/admin/views/field-group-field-conditional-logic.php:155
+#: ../assets/acf/admin/views/field-group-locations.php:68
+#: ../assets/acf/admin/views/field-group-locations.php:144
+#: ../assets/acf/api/api-helpers.php:4052
+#: ../assets/acf/assets/js/acf-field-group.js:1970
+#: ../assets/acf/assets/js/acf-field-group.js:2096
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "or"
 msgstr ""
 
 #: ../assets/acf/admin/field-group.php:281
@@ -508,10 +338,8 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ../assets/acf/admin/field-groups.php:509 ../assets/templates/filter.php:16
-#: ../features/admin/unit_metabox.php:187
-#: ../features/core/field_manager.php:259
-#: ../features/core/global_functions.php:225
+#: ../assets/acf/admin/field-groups.php:509
+#: ../features/admin/unit_metabox.php:211
 msgid "Status"
 msgstr "Status"
 
@@ -831,9 +659,6 @@ msgstr ""
 #: ../assets/acf/admin/views/field-group-fields.php:17
 #: ../assets/acf/fields/taxonomy.php:966
 #: ../assets/acf/pro/fields/flexible-content.php:619
-#: ../assets/templates/contact-form.php:73
-#: ../features/core/field_manager.php:100
-#: ../features/core/global_functions.php:125
 msgid "Name"
 msgstr "Name"
 
@@ -1577,6 +1402,147 @@ msgstr ""
 msgid "File type must be %s."
 msgstr ""
 
+#: ../assets/acf/assets/js/acf-field-group.js:458
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "title_is_required"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:519
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "move_to_trash"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:988
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "move_field_warning"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:996
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "move_field"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:1434
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "field_name_start"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:1667
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "sibling_fields"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:1667
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "parent_fields"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:1709
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "no_fields"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-field-group.js:1801
+#: ../assets/acf/assets/js/acf-field-group.min.js:1
+msgid "null"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:3175
+#: ../assets/acf/assets/js/acf-input.min.js:1
+msgid "unload"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:4648
+#: ../assets/acf/assets/js/acf-input.min.js:1
+msgid "date_picker"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:4880
+#: ../assets/acf/assets/js/acf-input.js:10278
+#: ../assets/acf/assets/js/acf-input.min.js:1
+#: ../assets/acf/assets/js/acf-input.min.js:3
+msgid "date_time_picker"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:5254
+#: ../assets/acf/assets/js/acf-input.js:5361
+#: ../assets/acf/assets/js/acf-input.js:5362
+#: ../assets/acf/assets/js/acf-input.min.js:1
+msgid "file"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:6113
+#: ../assets/acf/assets/js/acf-input.min.js:2
+msgid "google_map"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:6478
+#: ../assets/acf/assets/js/acf-input.js:6585
+#: ../assets/acf/assets/js/acf-input.js:6586
+#: ../assets/acf/assets/js/acf-input.js:7040
+#: ../assets/acf/assets/js/acf-input.js:7116
+#: ../assets/acf/assets/js/acf-input.min.js:2
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:2127
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:2128
+#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
+msgid "image"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:6837
+#: ../assets/acf/assets/js/acf-input.js:6852
+#: ../assets/acf/assets/js/acf-input.min.js:2
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:1486
+#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
+msgid "media"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:7587
+#: ../assets/acf/assets/js/acf-input.min.js:2
+msgid "restricted"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:7671
+#: ../assets/acf/assets/js/acf-input.min.js:2
+msgid "expand_details"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:7672
+#: ../assets/acf/assets/js/acf-input.min.js:2
+msgid "collapse_details"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:8350
+#: ../assets/acf/assets/js/acf-input.js:8392
+#: ../assets/acf/assets/js/acf-input.js:8566
+#: ../assets/acf/assets/js/acf-input.min.js:2
+msgid "relationship"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:8711
+#: ../assets/acf/assets/js/acf-input.min.js:2
+msgid "select"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:11511
+#: ../assets/acf/assets/js/acf-input.min.js:3
+msgid "validation_successful"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:11601
+#: ../assets/acf/assets/js/acf-input.min.js:3
+msgid "validation_failed"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:11667
+#: ../assets/acf/assets/js/acf-input.min.js:3
+msgid "validation_failed_1"
+msgstr ""
+
+#: ../assets/acf/assets/js/acf-input.js:11671
+#: ../assets/acf/assets/js/acf-input.min.js:3
+msgid "validation_failed_2"
+msgstr ""
+
 #: ../assets/acf/core/field.php:334
 msgid "Basic"
 msgstr ""
@@ -1946,8 +1912,8 @@ msgstr ""
 
 #: ../assets/acf/fields/email.php:36
 #: ../features/admin/inquiry_archive_cols.php:17
-#: ../features/admin/inquiry_metabox.php:180
-#: ../features/core/field_manager.php:74
+#: ../features/admin/inquiry_metabox.php:161 ../features/client/render.php:163
+#: ../features/core/field_manager.php:46
 msgid "Email"
 msgstr "E-Mail"
 
@@ -2188,9 +2154,7 @@ msgstr ""
 
 #: ../assets/acf/fields/message.php:36 ../assets/acf/fields/message.php:115
 #: ../assets/acf/fields/true_false.php:141
-#: ../assets/templates/contact-form.php:163
-#: ../features/admin/inquiry_metabox.php:246
-#: ../features/core/field_manager.php:82
+#: ../features/core/field_manager.php:50
 msgid "Message"
 msgstr "Nachricht"
 
@@ -2336,9 +2300,9 @@ msgstr ""
 msgid "Radio Button"
 msgstr ""
 
-#: ../assets/acf/fields/radio.php:261
+#: ../assets/acf/fields/radio.php:261 ../features/client/render.php:182
 msgid "Other"
-msgstr ""
+msgstr "Andere"
 
 #: ../assets/acf/fields/radio.php:266
 msgid "Add 'other' choice to allow for custom values"
@@ -2836,6 +2800,36 @@ msgstr ""
 msgid "Options"
 msgstr "Optionen"
 
+#: ../assets/acf/pro/assets/js/acf-pro-field-group.js:393
+#: ../assets/acf/pro/assets/js/acf-pro-field-group.min.js:1
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:516
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:521
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:548
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:554
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:589
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:594
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:595
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:618
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:624
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:625
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:825
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:833
+#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
+msgid "flexible_content"
+msgstr ""
+
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:116
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:172
+#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
+msgid "repeater"
+msgstr ""
+
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:1511
+#: ../assets/acf/pro/assets/js/acf-pro-input.js:1526
+#: ../assets/acf/pro/assets/js/acf-pro-input.min.js:1
+msgid "gallery"
+msgstr ""
+
 #: ../assets/acf/pro/core/updates.php:206
 #, php-format
 msgid ""
@@ -3147,158 +3141,45 @@ msgstr ""
 msgid "Maximum Rows"
 msgstr ""
 
-#: ../assets/templates/contact-form.php:24
-msgid "I am interested in"
-msgstr "Ich interessiere mich für"
-
-#: ../assets/templates/contact-form.php:52
-#: ../features/admin/inquiry_metabox.php:142
-msgid "Salutation"
-msgstr "Anrede"
-
-#: ../assets/templates/contact-form.php:59
-#: ../features/core/field_manager.php:118
-msgid "Mrs."
-msgstr "Frau"
-
-#: ../assets/templates/contact-form.php:66
-#: ../features/core/field_manager.php:118
-msgid "Mr."
-msgstr "Herr"
-
-#: ../assets/templates/contact-form.php:107
-#: ../features/admin/inquiry_metabox.php:189
-#: ../features/core/field_manager.php:54
-msgid "Phone"
-msgstr "Telefon"
-
-#: ../assets/templates/contact-form.php:125
-#: ../features/admin/inquiry_archive_cols.php:16
-#: ../features/core/field_manager.php:104
-#: ../features/core/field_manager.php:108
-msgid "Address"
-msgstr "Adresse"
-
-#: ../assets/templates/contact-form.php:153
-msgid "I've heard of this project through..."
-msgstr "Das Projekt kenne ich über..."
-
-#: ../assets/templates/contact-form.php:164
-msgid "Describe your inquiry"
-msgstr "Beschreiben Sie Ihre Anfrage"
-
-#: ../assets/templates/contact-form.php:167
-msgid "Please fill in all the required fields"
-msgstr "Bitte alle Pflichtfelder ausfüllen"
-
-#: ../assets/templates/contact-form.php:168
-msgid "Send"
-msgstr "Senden"
-
-#: ../assets/templates/filter.php:8
-msgid "Number of rooms"
-msgstr "Anzahl Zimmer"
-
-#: ../assets/templates/filter.php:22
-msgid "Surface"
-msgstr "Fläche"
-
-#: ../assets/templates/filter.php:24 ../assets/templates/filter.php:38
-#: ../assets/templates/filter.php:51
-msgid "to"
-msgstr "bis"
-
-#: ../assets/templates/filter.php:36 ../assets/templates/filter.php:49
-msgid "Rent price"
-msgstr "Mietpreis"
-
-#: ../assets/templates/list.php:50
-msgid "Contact"
-msgstr "Kontakt"
-
-#: ../assets/templates/list.php:86
-msgid "Cancel"
-msgstr "Abbrechen"
-
 #: ../features/admin/building_metabox.php:80
 msgid "Visible"
 msgstr "Sichtbar"
 
 #: ../features/admin/general_options.php:42
-msgid "Complex Manager Settings"
-msgstr "Complex Manager Einstellungen"
+msgid "CASAWP LG Settings"
+msgstr ""
 
-#: ../features/admin/general_options.php:105
+#: ../features/admin/general_options.php:88
 msgid "Main Settings"
 msgstr "Haupteinstellungen"
 
-#: ../features/admin/general_options.php:120
-msgid "Project Image"
-msgstr "Projektbild"
-
-#: ../features/admin/general_options.php:128
-msgid "Emails"
-msgstr "E-Mails"
-
-#: ../features/admin/general_options.php:136
-msgid "Use File-Cache for Renders"
-msgstr ""
-
-#: ../features/admin/general_options.php:146
+#: ../features/admin/general_options.php:104
 msgid ""
 "<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> direkte E-"
 "Mail"
 msgstr ""
 
-#: ../features/admin/general_options.php:154
+#: ../features/admin/general_options.php:112
 msgid ""
 "<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> Provider ID"
 msgstr ""
 
-#: ../features/admin/general_options.php:162
+#: ../features/admin/general_options.php:120
 msgid ""
 "<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> Publisher ID"
 msgstr ""
 
-#: ../features/admin/general_options.php:170
-msgid "Tausend Separator"
-msgstr ""
-
-#: ../features/admin/general_options.php:178
-msgid "Space/Area Decimal"
-msgstr "Flächen-Dezimalstellen"
-
-#: ../features/admin/general_options.php:188
-msgid "Remcat"
-msgstr ""
-
-#: ../features/admin/general_options.php:196
-msgid "IDX / REMCat Property Ref."
-msgstr ""
-
-#: ../features/admin/general_options.php:205
-msgid "Column values to show in Lists"
-msgstr "Spaltenanzeige in der Liste"
-
-#: ../features/admin/general_options.php:213
-msgid "Import settings"
-msgstr ""
-
-#: ../features/admin/general_options.php:221
-msgid "Google Analytics Code"
-msgstr ""
-
-#: ../features/admin/general_options.php:314
+#: ../features/admin/general_options.php:176
 msgid "Enter your settings below:"
 msgstr "Tragen Sie Einstellungen unten ein:"
-
-#: ../features/admin/general_options.php:435
-msgid "Upload Image"
-msgstr "Bild hochladen"
 
 #: ../features/admin/inquiry_archive_cols.php:15
 msgid "From"
 msgstr "Von"
+
+#: ../features/admin/inquiry_archive_cols.php:16
+msgid "Address"
+msgstr "Adresse"
 
 #: ../features/admin/inquiry_archive_cols.php:18
 msgid "Telephone"
@@ -3314,49 +3195,33 @@ msgid "Unit Settings"
 msgstr "Objekt Einstellungen"
 
 #: ../features/admin/inquiry_metabox.php:106
-#: ../features/admin/unit_metabox.php:141
+#: ../features/admin/unit_metabox.php:148
 msgid "Choose or Upload a Document"
 msgstr "Wähle oder lade ein Dokument hoch"
 
 #: ../features/admin/inquiry_metabox.php:107
-#: ../features/admin/unit_metabox.php:142
+#: ../features/admin/unit_metabox.php:149
 msgid "Use this document"
 msgstr "Verwende dieses Dokument"
 
-#: ../features/admin/inquiry_metabox.php:133
-msgid "Unit id"
-msgstr "Objekt ID"
+#: ../features/admin/inquiry_metabox.php:133 ../features/client/render.php:136
+msgid "Salutation"
+msgstr "Anrede"
 
-#: ../features/admin/inquiry_metabox.php:151
-#: ../features/core/field_manager.php:42
+#: ../features/admin/inquiry_metabox.php:142 ../features/client/render.php:149
+#: ../features/core/field_manager.php:34
 msgid "First name"
 msgstr "Vorname"
 
-#: ../features/admin/inquiry_metabox.php:160
-#: ../features/admin/inquiry_metabox.php:170
-#: ../features/core/field_manager.php:46
+#: ../features/admin/inquiry_metabox.php:151 ../features/client/render.php:155
+#: ../features/core/field_manager.php:38
 msgid "Last name"
 msgstr "Nachname"
 
-#: ../features/admin/inquiry_metabox.php:201
-#: ../features/core/field_manager.php:62
-msgid "Street"
-msgstr "Strasse"
-
-#: ../features/admin/inquiry_metabox.php:210
-#: ../features/core/field_manager.php:66
-msgid "ZIP"
-msgstr "PLZ"
-
-#: ../features/admin/inquiry_metabox.php:219
-#: ../features/core/field_manager.php:70
-msgid "City"
-msgstr "Ort"
-
-#: ../features/admin/inquiry_metabox.php:228
-#: ../features/core/field_manager.php:94
-msgid "Reason"
-msgstr "Gründe"
+#: ../features/admin/inquiry_metabox.php:170 ../features/client/render.php:169
+#: ../features/core/field_manager.php:42
+msgid "Mobile"
+msgstr ""
 
 #: ../features/admin/post_type_icons.php:33
 msgid "Post Type Icons"
@@ -3368,25 +3233,22 @@ msgstr ""
 "Sie haben nicht ausreichende Rechte um Zugang zu dieser Seite zu haben."
 
 #: ../features/admin/unit_archive_cols.php:71
-#: ../features/admin/unit_metabox.php:190 ../features/client/render.php:267
+#: ../features/admin/unit_metabox.php:214
 msgid "Available"
 msgstr "Verfügbar"
 
 #: ../features/admin/unit_archive_cols.php:72
-#: ../features/admin/unit_metabox.php:192 ../features/client/render.php:269
-#: ../features/client/render.php:325
+#: ../features/admin/unit_metabox.php:216
 msgid "Reserved"
 msgstr "Reserviert"
 
 #: ../features/admin/unit_archive_cols.php:73
-#: ../features/admin/unit_metabox.php:194 ../features/client/render.php:270
-#: ../features/client/render.php:326
+#: ../features/admin/unit_metabox.php:218
 msgid "Rented"
 msgstr "Vermietet"
 
 #: ../features/admin/unit_archive_cols.php:74
-#: ../features/admin/unit_metabox.php:193 ../features/client/render.php:271
-#: ../features/client/render.php:327
+#: ../features/admin/unit_metabox.php:217
 msgid "Sold"
 msgstr "Verkauft"
 
@@ -3394,538 +3256,562 @@ msgstr "Verkauft"
 msgid "Unit Graphic Settings"
 msgstr "Objekt Grafik Einstellungen"
 
-#: ../features/admin/unit_metabox.php:167
-#: ../features/core/field_manager.php:299
+#: ../features/admin/unit_metabox.php:174
+msgid "Link"
+msgstr ""
+
+#: ../features/admin/unit_metabox.php:191
 msgid "Download file"
 msgstr "Datei herunterladen"
 
-#: ../features/admin/unit_metabox.php:183
+#: ../features/admin/unit_metabox.php:207
 msgid "General"
 msgstr "Generell"
 
-#: ../features/admin/unit_metabox.php:191 ../features/client/render.php:268
-#: ../features/client/render.php:324
+#: ../features/admin/unit_metabox.php:215
 msgid "pre-reserved"
 msgstr "Vorreserviert"
 
-#: ../features/admin/unit_metabox.php:200
-#: ../features/core/global_functions.php:133
+#: ../features/admin/unit_metabox.php:224
 msgid "Number of Rooms"
 msgstr "Anzahl Zimmer"
 
-#: ../features/admin/unit_metabox.php:209
-#: ../features/core/global_functions.php:141
+#: ../features/admin/unit_metabox.php:235
 msgid "Apartment Story"
 msgstr "Wohnung/Stockwerk"
 
-#: ../features/admin/unit_metabox.php:220
-#: ../features/core/field_manager.php:264
+#: ../features/admin/unit_metabox.php:246
 msgid "IDX / REMCat House Ref."
 msgstr ""
 
-#: ../features/admin/unit_metabox.php:229
-#: ../features/core/field_manager.php:269
+#: ../features/admin/unit_metabox.php:255
 msgid "IDX / REMCat Object Ref."
 msgstr ""
 
-#: ../features/admin/unit_metabox.php:240
+#: ../features/admin/unit_metabox.php:263
+#, fuzzy
+#| msgid "Number of rooms"
+msgid "Number of people (min)"
+msgstr "Anzahl Zimmer"
+
+#: ../features/admin/unit_metabox.php:271
+#, fuzzy
+#| msgid "Number of rooms"
+msgid "Number of people (max)"
+msgstr "Anzahl Zimmer"
+
+#: ../features/admin/unit_metabox.php:279
+msgid "Income (min)"
+msgstr ""
+
+#: ../features/admin/unit_metabox.php:287
+msgid "Income (max)"
+msgstr ""
+
+#: ../features/admin/unit_metabox.php:297
 msgid "Spaces"
 msgstr "Flächen"
 
-#: ../features/admin/unit_metabox.php:245
-#: ../features/core/global_functions.php:149
+#: ../features/admin/unit_metabox.php:302
 msgid "Living Space"
 msgstr "Wohnfläche"
 
-#: ../features/admin/unit_metabox.php:254
-#: ../features/core/global_functions.php:158
+#: ../features/admin/unit_metabox.php:311
 msgid "Usable Space"
 msgstr "Nutzfläche"
 
-#: ../features/admin/unit_metabox.php:264
-#: ../features/core/global_functions.php:204
+#: ../features/admin/unit_metabox.php:321
 msgid "Terrace Space"
 msgstr "Terrassenfläche"
 
-#: ../features/admin/unit_metabox.php:273
-#: ../features/core/global_functions.php:213
+#: ../features/admin/unit_metabox.php:330
 msgid "Balcony Space"
 msgstr "Balkonfläche"
 
-#: ../features/admin/unit_metabox.php:287
+#: ../features/admin/unit_metabox.php:344 ../features/client/render.php:180
 msgid "Buy"
 msgstr "Kaufen"
 
-#: ../features/admin/unit_metabox.php:291
-#: ../features/core/field_manager.php:239
-#: ../features/core/global_functions.php:234
+#: ../features/admin/unit_metabox.php:348
 msgid "Currency"
 msgstr "Währung"
 
-#: ../features/admin/unit_metabox.php:305
-#: ../features/core/global_functions.php:166
+#: ../features/admin/unit_metabox.php:362
 msgid "Purchase Price"
 msgstr "Kaufpreis"
 
-#: ../features/admin/unit_metabox.php:309
+#: ../features/admin/unit_metabox.php:366
 msgid "\"\" = not for sale, 0 = upon request"
 msgstr "\"\" = nicht zu verkaufen, 0 = auf Anfrage"
 
-#: ../features/admin/unit_metabox.php:315
+#: ../features/admin/unit_metabox.php:372
 msgid "Purchase scope"
 msgstr "Verkaufs-Segmentierung"
 
-#: ../features/admin/unit_metabox.php:325
-#: ../features/core/field_manager.php:244
+#: ../features/admin/unit_metabox.php:382
 msgid "Rent"
 msgstr "Miete"
 
-#: ../features/admin/unit_metabox.php:330
-#: ../features/core/global_functions.php:175
+#: ../features/admin/unit_metabox.php:387
 msgid "Rent Net Price"
 msgstr "Mietkosten Netto"
 
-#: ../features/admin/unit_metabox.php:334
+#: ../features/admin/unit_metabox.php:391
 msgid "\"\" = not for rent, 0 = upon request"
 msgstr "\"\" = nicht zu vermieten, 0 = auf Anfrage"
 
-#: ../features/admin/unit_metabox.php:340
+#: ../features/admin/unit_metabox.php:397
 msgid "Rent Time segment"
 msgstr "Mieten zeitabschnitt"
 
-#: ../features/admin/unit_metabox.php:351
+#: ../features/admin/unit_metabox.php:408
 msgid "Rental scope"
 msgstr "Miet-Segmentierung"
 
-#: ../features/admin/unit_metabox.php:362
-#: ../features/core/field_manager.php:294
-#: ../features/core/global_functions.php:195
+#: ../features/admin/unit_metabox.php:419
 msgid "Extra Costs"
 msgstr "Nebenkosten"
 
-#: ../features/admin/unit_metabox.php:384
-#: ../features/admin/unit_metabox.php:393
-#: ../features/admin/unit_metabox.php:402
-#: ../features/core/field_manager.php:309
-#: ../features/core/field_manager.php:314
-#: ../features/core/field_manager.php:319
-#: ../features/core/global_functions.php:243
-#: ../features/core/global_functions.php:252
-#: ../features/core/global_functions.php:261
+#: ../features/admin/unit_metabox.php:441
+#: ../features/admin/unit_metabox.php:450
+#: ../features/admin/unit_metabox.php:459
 #, php-format
 msgid "Custom %d"
 msgstr ""
 
-#: ../features/client/render.php:11
+#: ../features/client/render.php:10
 msgid "First name is required"
 msgstr "Vorname ist benötigt"
 
-#: ../features/client/render.php:12
+#: ../features/client/render.php:11
 msgid "Last name is required"
 msgstr "Nachname ist benötigt"
 
-#: ../features/client/render.php:13
+#: ../features/client/render.php:12
 msgid "The company is required"
 msgstr "Firma wird benötigt"
 
-#: ../features/client/render.php:14
+#: ../features/client/render.php:13
 msgid "Email is not valid"
 msgstr "E-Mail ist nicht korrekt"
 
-#: ../features/client/render.php:15
+#: ../features/client/render.php:14
 msgid "A phone number is required"
 msgstr "Eine Telefonnummer ist benötigt"
 
-#: ../features/client/render.php:16
+#: ../features/client/render.php:15
 msgid "A street address is required"
 msgstr "Eine Strasse ist benötigt"
 
-#: ../features/client/render.php:17
+#: ../features/client/render.php:16
 msgid "ZIP is required"
 msgstr "PLZ ist benötigt"
 
-#: ../features/client/render.php:18
+#: ../features/client/render.php:17
 msgid "City is required"
 msgstr "Ort ist benötigt"
 
-#: ../features/client/render.php:19
+#: ../features/client/render.php:18
 msgid "Message is required"
 msgstr "Nachricht wird benötigt"
 
-#: ../features/client/render.php:20
+#: ../features/client/render.php:19
 msgid "Ivalid post"
 msgstr "Falsche Absendung"
 
-#: ../features/client/render.php:22
+#: ../features/client/render.php:21
 msgid "Please choose a unit"
 msgstr "Bitte wählen Sie ein Objekt"
 
-#: ../features/client/render.php:858 ../features/client/render.php:923
-msgid "Unit inquiry"
-msgstr "Objektanfrage"
+#: ../features/client/render.php:177
+msgid "Estimation reason"
+msgstr "Bewertungsgrund"
 
-#: ../features/client/render.php:891
-msgid "Phone:"
-msgstr "Telefon:"
+#: ../features/client/render.php:179
+msgid "Sell"
+msgstr "Verkaufen"
 
-#: ../features/client/render.php:895
-msgid "Mobile:"
+#: ../features/client/render.php:181
+msgid "Financing"
+msgstr "Finanzieren"
+
+#: ../features/client/render.php:195
+msgid "Property type"
+msgstr "Objektart"
+
+#: ../features/client/render.php:198
+msgid "Single-family house"
+msgstr "Einfamilienhaus"
+
+#: ../features/client/render.php:200
+msgid "Condominium"
+msgstr "Eigentumswohnung"
+
+#: ../features/client/render.php:205
+msgid "Property surface"
+msgstr "Grundstücksfläche"
+
+#: ../features/client/render.php:210
+msgid "Net living area"
+msgstr "Nettowohnfläche"
+
+#: ../features/client/render.php:215
+msgid "Number of rooms"
+msgstr "Anzahl Zimmer"
+
+#: ../features/client/render.php:220
+msgid "Building year"
+msgstr "Baujahr"
+
+#: ../features/client/render.php:232
+msgid "Where is the property located?"
 msgstr ""
 
-#: ../features/client/render.php:911 ../features/core/field_manager.php:90
-#: ../features/core/field_manager.php:112
-#: ../features/core/field_manager.php:229
-msgid "Unit"
-msgstr "Objekt"
-
-#: ../features/client/render.php:1127
+#: ../features/client/render.php:411
 msgid "Inquiry has been sent. Thank you!"
 msgstr "Ihre Anfrage wurde versendet. Besten Dank!"
 
-#: ../features/client/render.php:1162
+#: ../features/client/render.php:441
 msgid "Please check the following and try again:"
 msgstr "Bitte überprüfen Sie folgendes und versuchen Sie es erneut:"
 
-#: ../features/core/field_manager.php:50
-msgid "Company"
-msgstr "Firma"
-
-#: ../features/core/field_manager.php:58
-msgid "Mobile"
-msgstr ""
-
-#: ../features/core/field_manager.php:86
+#: ../features/core/field_manager.php:54
 msgid "Gender"
 msgstr "Geschlecht"
 
-#: ../features/core/field_manager.php:234
-msgid "Purchase price"
-msgstr "Kaufpreis"
-
-#: ../features/core/field_manager.php:249
-msgid "Rooms"
-msgstr "Zimmer"
-
-#: ../features/core/field_manager.php:254
-msgid "Floor"
-msgstr "Etage"
-
-#: ../features/core/field_manager.php:274
-#: ../features/core/field_manager.php:343
-#: ../features/core/field_manager.php:347
-msgid "Living space"
-msgstr "Wohnfläche"
-
-#: ../features/core/field_manager.php:279
-msgid "Usable space"
-msgstr "Nutzfläche"
-
-#: ../features/core/field_manager.php:284
-#: ../features/core/field_manager.php:351
-msgid "Terrace space"
-msgstr "Terrassenfläche"
-
-#: ../features/core/field_manager.php:289
-#: ../features/core/field_manager.php:355
-msgid "Balcony space"
-msgstr "Balkonfläche"
-
-#: ../features/core/field_manager.php:304
-msgid "Download label"
-msgstr "Datei Anzeigenamen"
-
-#: ../features/core/field_manager.php:327
-#, php-format
-msgid "Purchase price%s in %s%s"
-msgstr "Kaufpreis%s in %s%s"
-
-#: ../features/core/field_manager.php:331
-#, php-format
-msgid "Rent%s in %s%s"
-msgstr "Mietzins%s in %s%s"
-
-#: ../features/core/field_manager.php:335
-#: ../features/core/field_manager.php:339
-#: ../features/core/global_functions.php:184
-msgid "Rent gross"
-msgstr "Brutto miete"
-
-#: ../features/core/field_manager.php:359
-#, php-format
-msgid "Extra Costs%s in %s%s"
-msgstr "Nebenkosten%s in %s%s"
-
-#: ../features/core/field_manager.php:369
-msgid "upon request"
-msgstr "auf Anfrage"
-
-#: ../features/core/global_functions.php:270
-msgid "Download"
-msgstr "Datei herunterladen"
-
-#: ../features/core/post_types.php:17
-msgctxt "post type general name"
-msgid "Apartment Units"
-msgstr "Objekte"
-
-#: ../features/core/post_types.php:18
-msgctxt "post type singular name"
-msgid "Unit"
-msgstr "Objekt"
-
-#: ../features/core/post_types.php:19
-msgctxt "admin menu"
-msgid "Apartment Units"
-msgstr "Objekte"
-
-#: ../features/core/post_types.php:20
-msgctxt "add new on admin bar"
-msgid "Unit"
-msgstr "Objekt"
-
-#: ../features/core/post_types.php:21
-msgctxt "unit"
-msgid "Add New"
-msgstr "Neu hinzufügen"
-
-#: ../features/core/post_types.php:22
-msgid "Add New Unit"
-msgstr "Neues Objekt hinzufügen"
-
-#: ../features/core/post_types.php:23
-msgid "New Unit"
-msgstr "Neues Objekt hinzufügen"
-
-#: ../features/core/post_types.php:24
-msgid "Edit Unit"
-msgstr "Objekt bearbeiten"
-
-#: ../features/core/post_types.php:25
-msgid "View Unit"
-msgstr "Objekt anzeigen"
-
-#: ../features/core/post_types.php:26
-msgid "All Units"
-msgstr "Alle Objekte"
-
-#: ../features/core/post_types.php:27
-msgid "Search Units"
-msgstr "Objekte Suchen"
-
-#: ../features/core/post_types.php:28
-msgid "Parent Unit:"
-msgstr "Übergeordnetes Objekt"
-
-#: ../features/core/post_types.php:29
-msgid "No units found."
-msgstr "Keine Objekte gefunden."
-
-#: ../features/core/post_types.php:30
-msgid "No units found in Trash."
-msgstr "Keine Objekte im Papierkorb gefunden."
-
-#: ../features/core/post_types.php:55
-msgctxt "taxonomy general name"
-msgid "Buildings"
-msgstr "Gebäude"
-
-#: ../features/core/post_types.php:56
-msgctxt "taxonomy singular name"
-msgid "Building"
-msgstr "Gebäude"
-
-#: ../features/core/post_types.php:57
-msgid "Search Buildings"
-msgstr "Gebäude Suchen"
-
-#: ../features/core/post_types.php:58
-msgid "All Buildings"
-msgstr "Alle Gebäude"
-
-#: ../features/core/post_types.php:59
-msgid "Parent Building"
-msgstr "Übergeordnetes Gebäude"
-
-#: ../features/core/post_types.php:60
-msgid "Parent Building:"
-msgstr "Übergeordnetes Gebäude:"
-
-#: ../features/core/post_types.php:61
-msgid "Edit Building"
-msgstr "Gebäude bearbeiten"
-
-#: ../features/core/post_types.php:62
-msgid "Update Building"
-msgstr "Gebäude aktualisieren"
-
-#: ../features/core/post_types.php:63
-msgid "Add New Building"
-msgstr "Neues Gebäude hinzufügen"
-
-#: ../features/core/post_types.php:64
-msgid "New Building Name"
-msgstr "Neuer Gebäudenamen"
-
-#: ../features/core/post_types.php:65
-msgid "Building"
-msgstr "Gebäude"
-
-#: ../features/core/post_types.php:78
-msgctxt "taxonomy general name"
-msgid "Types"
-msgstr "Typen"
-
-#: ../features/core/post_types.php:79
-msgctxt "taxonomy singular name"
-msgid "Type"
-msgstr "Typ"
-
-#: ../features/core/post_types.php:80
-msgid "Search Types"
-msgstr "Typen suchen"
-
-#: ../features/core/post_types.php:81
-msgid "All Types"
-msgstr "Alle Typen"
-
-#: ../features/core/post_types.php:82
-msgid "Parent Type"
-msgstr "Übergeordneter Typ"
-
-#: ../features/core/post_types.php:83
-msgid "Parent Type:"
-msgstr "Übergeordneter Typ:"
-
-#: ../features/core/post_types.php:84
-msgid "Edit Type"
-msgstr "Typ bearbeiten"
-
-#: ../features/core/post_types.php:85
-msgid "Update Type"
-msgstr "Typ aktualisieren"
-
-#: ../features/core/post_types.php:86
-msgid "Add New Type"
-msgstr "Neuer Typ hinzufügen"
-
-#: ../features/core/post_types.php:87
-msgid "New Type Name"
-msgstr "Neuer Typenname"
-
-#: ../features/core/post_types.php:88
-msgid "Types"
-msgstr "Typen"
-
-#: ../features/core/post_types.php:101
+#: ../features/core/post_types.php:41
 msgctxt "post type general name"
 msgid "Inquiries"
 msgstr "Anfragen"
 
-#: ../features/core/post_types.php:102
+#: ../features/core/post_types.php:42
 msgctxt "post type singular name"
 msgid "Inquiry"
 msgstr "Anfrage"
 
-#: ../features/core/post_types.php:103
+#: ../features/core/post_types.php:43
 msgctxt "admin menu"
 msgid "Inquiries"
 msgstr "Anfragen"
 
-#: ../features/core/post_types.php:104
+#: ../features/core/post_types.php:44
 msgctxt "add new on admin bar"
 msgid "Inquiry"
 msgstr "Anfrage"
 
-#: ../features/core/post_types.php:105
+#: ../features/core/post_types.php:45
 msgctxt "inquiry"
 msgid "Add New"
 msgstr "Neu hinzufügen"
 
-#: ../features/core/post_types.php:106
+#: ../features/core/post_types.php:46
 msgid "Add New Inquiry"
 msgstr "Neue Anfrage hinzufügen"
 
-#: ../features/core/post_types.php:107
+#: ../features/core/post_types.php:47
 msgid "New Inquiry"
 msgstr "Neue Anfrage"
 
-#: ../features/core/post_types.php:108
+#: ../features/core/post_types.php:48
 msgid "Edit Inquiry"
 msgstr "Anfrage bearbeiten"
 
-#: ../features/core/post_types.php:109
+#: ../features/core/post_types.php:49
 msgid "View Inquiry"
 msgstr "Anfrage anzeigen"
 
-#: ../features/core/post_types.php:110
+#: ../features/core/post_types.php:50
 msgid "All Inquiries"
 msgstr "Alle Anfragen"
 
-#: ../features/core/post_types.php:111
+#: ../features/core/post_types.php:51
 msgid "Search Inquiries"
 msgstr "Anfrage suchen"
 
-#: ../features/core/post_types.php:112
+#: ../features/core/post_types.php:52
 msgid "Parent Inquiries:"
 msgstr "Übergeordnete Anfrage"
 
-#: ../features/core/post_types.php:113
+#: ../features/core/post_types.php:53
 msgid "No inquiries found."
 msgstr "Keine Anfragen gefunden."
 
-#: ../features/core/post_types.php:114
+#: ../features/core/post_types.php:54
 msgid "No inquiries found in Trash."
 msgstr "Keine Anfragen im Papierkorb gefunden."
-
-#: ../features/core/post_types.php:135
-msgctxt "taxonomy general name"
-msgid "Reasons"
-msgstr "Gründe"
-
-#: ../features/core/post_types.php:136
-msgctxt "taxonomy singular name"
-msgid "Reason"
-msgstr "Grund"
-
-#: ../features/core/post_types.php:137
-msgid "Search Reasons"
-msgstr "Gründe suchen"
-
-#: ../features/core/post_types.php:138
-msgid "All Reasons"
-msgstr "Alle Gründe"
-
-#: ../features/core/post_types.php:139
-msgid "Parent Reason"
-msgstr "Übergeordneter Grund"
-
-#: ../features/core/post_types.php:140
-msgid "Parent Reason:"
-msgstr "Übergeordneter Grund:"
-
-#: ../features/core/post_types.php:141
-msgid "Edit Reason"
-msgstr "Grund bearbeiten"
-
-#: ../features/core/post_types.php:142
-msgid "Update Reason"
-msgstr "Grund aktualisieren"
-
-#: ../features/core/post_types.php:143
-msgid "Add New Reason"
-msgstr "Neuer Grund hinzufügen"
-
-#: ../features/core/post_types.php:144
-msgid "New Reason Name"
-msgstr "Neuer Grund"
-
-#: ../features/core/post_types.php:145
-msgid "Reasons"
-msgstr "Gründe"
 
 #: ../features/silence.php:3
 msgid "Silence is golden... or at least isn't completely annoying."
 msgstr ""
+
+#~ msgid "I am interested in"
+#~ msgstr "Ich interessiere mich für"
+
+#~ msgid "Mrs."
+#~ msgstr "Frau"
+
+#~ msgid "Mr."
+#~ msgstr "Herr"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#~ msgid "I've heard of this project through..."
+#~ msgstr "Das Projekt kenne ich über..."
+
+#~ msgid "Describe your inquiry"
+#~ msgstr "Beschreiben Sie Ihre Anfrage"
+
+#~ msgid "Please fill in all the required fields"
+#~ msgstr "Bitte alle Pflichtfelder ausfüllen"
+
+#~ msgid "Send"
+#~ msgstr "Senden"
+
+#~ msgid "Surface"
+#~ msgstr "Fläche"
+
+#~ msgid "to"
+#~ msgstr "bis"
+
+#~ msgid "Rent price"
+#~ msgstr "Mietpreis"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "Complex Manager Settings"
+#~ msgstr "Complex Manager Einstellungen"
+
+#~ msgid "Project Image"
+#~ msgstr "Projektbild"
+
+#~ msgid "Emails"
+#~ msgstr "E-Mails"
+
+#~ msgid "Space/Area Decimal"
+#~ msgstr "Flächen-Dezimalstellen"
+
+#~ msgid "Column values to show in Lists"
+#~ msgstr "Spaltenanzeige in der Liste"
+
+#~ msgid "Upload Image"
+#~ msgstr "Bild hochladen"
+
+#~ msgid "Unit id"
+#~ msgstr "Objekt ID"
+
+#~ msgid "Street"
+#~ msgstr "Strasse"
+
+#~ msgid "ZIP"
+#~ msgstr "PLZ"
+
+#~ msgid "City"
+#~ msgstr "Ort"
+
+#~ msgid "Reason"
+#~ msgstr "Gründe"
+
+#~ msgid "Unit inquiry"
+#~ msgstr "Objektanfrage"
+
+#~ msgid "Phone:"
+#~ msgstr "Telefon:"
+
+#~ msgid "Unit"
+#~ msgstr "Objekt"
+
+#~ msgid "Company"
+#~ msgstr "Firma"
+
+#~ msgid "Purchase price"
+#~ msgstr "Kaufpreis"
+
+#~ msgid "Rooms"
+#~ msgstr "Zimmer"
+
+#~ msgid "Floor"
+#~ msgstr "Etage"
+
+#~ msgid "Living space"
+#~ msgstr "Wohnfläche"
+
+#~ msgid "Usable space"
+#~ msgstr "Nutzfläche"
+
+#~ msgid "Terrace space"
+#~ msgstr "Terrassenfläche"
+
+#~ msgid "Balcony space"
+#~ msgstr "Balkonfläche"
+
+#~ msgid "Download label"
+#~ msgstr "Datei Anzeigenamen"
+
+#~ msgid "Purchase price%s in %s%s"
+#~ msgstr "Kaufpreis%s in %s%s"
+
+#~ msgid "Rent%s in %s%s"
+#~ msgstr "Mietzins%s in %s%s"
+
+#~ msgid "Rent gross"
+#~ msgstr "Brutto miete"
+
+#~ msgid "Extra Costs%s in %s%s"
+#~ msgstr "Nebenkosten%s in %s%s"
+
+#~ msgid "upon request"
+#~ msgstr "auf Anfrage"
+
+#~ msgid "Download"
+#~ msgstr "Datei herunterladen"
+
+#~ msgctxt "post type general name"
+#~ msgid "Apartment Units"
+#~ msgstr "Objekte"
+
+#~ msgctxt "post type singular name"
+#~ msgid "Unit"
+#~ msgstr "Objekt"
+
+#~ msgctxt "admin menu"
+#~ msgid "Apartment Units"
+#~ msgstr "Objekte"
+
+#~ msgctxt "add new on admin bar"
+#~ msgid "Unit"
+#~ msgstr "Objekt"
+
+#~ msgctxt "unit"
+#~ msgid "Add New"
+#~ msgstr "Neu hinzufügen"
+
+#~ msgid "Add New Unit"
+#~ msgstr "Neues Objekt hinzufügen"
+
+#~ msgid "New Unit"
+#~ msgstr "Neues Objekt hinzufügen"
+
+#~ msgid "Edit Unit"
+#~ msgstr "Objekt bearbeiten"
+
+#~ msgid "View Unit"
+#~ msgstr "Objekt anzeigen"
+
+#~ msgid "All Units"
+#~ msgstr "Alle Objekte"
+
+#~ msgid "Search Units"
+#~ msgstr "Objekte Suchen"
+
+#~ msgid "Parent Unit:"
+#~ msgstr "Übergeordnetes Objekt"
+
+#~ msgid "No units found."
+#~ msgstr "Keine Objekte gefunden."
+
+#~ msgid "No units found in Trash."
+#~ msgstr "Keine Objekte im Papierkorb gefunden."
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Buildings"
+#~ msgstr "Gebäude"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Building"
+#~ msgstr "Gebäude"
+
+#~ msgid "Search Buildings"
+#~ msgstr "Gebäude Suchen"
+
+#~ msgid "All Buildings"
+#~ msgstr "Alle Gebäude"
+
+#~ msgid "Parent Building"
+#~ msgstr "Übergeordnetes Gebäude"
+
+#~ msgid "Parent Building:"
+#~ msgstr "Übergeordnetes Gebäude:"
+
+#~ msgid "Edit Building"
+#~ msgstr "Gebäude bearbeiten"
+
+#~ msgid "Update Building"
+#~ msgstr "Gebäude aktualisieren"
+
+#~ msgid "Add New Building"
+#~ msgstr "Neues Gebäude hinzufügen"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Types"
+#~ msgstr "Typen"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Type"
+#~ msgstr "Typ"
+
+#~ msgid "Search Types"
+#~ msgstr "Typen suchen"
+
+#~ msgid "All Types"
+#~ msgstr "Alle Typen"
+
+#~ msgid "Parent Type"
+#~ msgstr "Übergeordneter Typ"
+
+#~ msgid "Parent Type:"
+#~ msgstr "Übergeordneter Typ:"
+
+#~ msgid "Edit Type"
+#~ msgstr "Typ bearbeiten"
+
+#~ msgid "Update Type"
+#~ msgstr "Typ aktualisieren"
+
+#~ msgid "Add New Type"
+#~ msgstr "Neuer Typ hinzufügen"
+
+#~ msgid "New Type Name"
+#~ msgstr "Neuer Typenname"
+
+#~ msgid "Types"
+#~ msgstr "Typen"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Reasons"
+#~ msgstr "Gründe"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "Reason"
+#~ msgstr "Grund"
+
+#~ msgid "Search Reasons"
+#~ msgstr "Gründe suchen"
+
+#~ msgid "All Reasons"
+#~ msgstr "Alle Gründe"
+
+#~ msgid "Parent Reason"
+#~ msgstr "Übergeordneter Grund"
+
+#~ msgid "Parent Reason:"
+#~ msgstr "Übergeordneter Grund:"
+
+#~ msgid "Update Reason"
+#~ msgstr "Grund aktualisieren"
+
+#~ msgid "Add New Reason"
+#~ msgstr "Neuer Grund hinzufügen"
+
+#~ msgid "New Reason Name"
+#~ msgstr "Neuer Grund"
+
+#~ msgid "Reasons"
+#~ msgstr "Gründe"
 
 #~ msgid "Hover color"
 #~ msgstr "Schwebefarbe"
