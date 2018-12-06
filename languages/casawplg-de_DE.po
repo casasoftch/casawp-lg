@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Starter Kit 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 13:35+0100\n"
-"PO-Revision-Date: 2018-12-06 13:40+0100\n"
+"PO-Revision-Date: 2018-12-06 14:01+0100\n"
 "Last-Translator: Jens Stalder <js@casasoft.ch>\n"
 "Language-Team: aut0poietic\n"
 "Language: de_DE\n"
@@ -3465,7 +3465,7 @@ msgstr "Baujahr"
 
 #: ../features/client/render.php:232
 msgid "Where is the property located?"
-msgstr ""
+msgstr "Wo befindet sich Ihre Immobilie?"
 
 #: ../features/client/render.php:411
 msgid "Inquiry has been sent. Thank you!"
