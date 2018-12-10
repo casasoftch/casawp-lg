@@ -61,6 +61,21 @@ jQuery( function () {
 		    }
 		});
 
+		if ($('input[name="extra_data[Objektart]"]:checked').val() == 'Einfamilienhaus') {
+			$('#casawp-lg-property-surface').parent().show();
+			$('#casawp-lg-bathroom').parent().hide();
+		}
+
+		$('input[type="radio"][name="extra_data[Objektart]"]').change(function(){
+			if ($('input[name="extra_data[Objektart]"]:checked').val() == 'Einfamilienhaus') {
+				$('#casawp-lg-property-surface').parent().show();
+				$('#casawp-lg-bathroom').parent().hide();
+			} else {
+				$('#casawp-lg-property-surface').parent().hide();
+				$('#casawp-lg-bathroom').parent().show();
+			}
+		});
+
 
 		function initAutocomplete() {
 	        var map = new google.maps.Map(document.getElementById('casawp-lg_map'), {
