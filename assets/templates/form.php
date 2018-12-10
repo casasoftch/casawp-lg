@@ -401,7 +401,7 @@
 										                        		name="extra_data[' . __('Sell', 'casawplg') . ']"
 										                        		value="Ja"
 										                        	/>
-										                        	<label for="choice_sell">' . __('Sell', 'casawplg') . '</label>
+										                        	<label class="control-label" for="choice_sell">' . __('Sell', 'casawplg') . '</label>
 										                        </div>
 										                        <div class="casawp-lg-checkboxoption">
 										                        	<input
@@ -411,7 +411,7 @@
 										                        		name="extra_data[' . __('Buy', 'casawplg') . ']"
 										                        		value="Ja"
 										                        	/>
-										                        	<label for="choice_buy">' . __('Buy', 'casawplg') . '</label>
+										                        	<label class="control-label" for="choice_buy">' . __('Buy', 'casawplg') . '</label>
 										                        </div>
 										                        <div class="casawp-lg-checkboxoption">
 										                        	<input
@@ -421,7 +421,7 @@
 										                        		name="extra_data[' . __('Financing', 'casawplg') . ']"
 										                        		value="Ja"
 										                        	/>
-										                        	<label for="choice_financing">' . __('Financing', 'casawplg') . '</label>
+										                        	<label class="control-label" for="choice_financing">' . __('Financing', 'casawplg') . '</label>
 										                        </div>
 										                        <div class="casawp-lg-checkboxoption">
 										                        	<input
@@ -431,7 +431,7 @@
 										                        		name="extra_data[' . __('Other', 'casawplg') . ']"
 										                        		value="Ja"
 										                        	/>
-										                        	<label for="choice_other">' . __('Other', 'casawplg') . '</label>
+										                        	<label class="control-label" for="choice_other">' . __('Other', 'casawplg') . '</label>
 										                        </div>
 									                        </div>
 									                    </div>
