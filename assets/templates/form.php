@@ -238,32 +238,37 @@
 								<?php 
 									$html = '<div class="casawp-lg_datawrapper">
 									            <div class="casawp-lg_toggle">
-									                <span class="casawp-lg_spanlabel">'.__('Property type', 'casawplg').'</span>
+									                <label class="casawp-lg_spanlabel control-label">'.__('Property type', 'casawplg').'</label>
 									                <div class="casawp-lg_togglebox">
 									                    <input type="radio" class="casawp-lg_togglebox__switchinput" name="extra_data[Objektart]" value="Einfamilienhaus" id="casawplgHouse" checked>
-									                    <label for="casawplgHouse" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off">'.__('Single-family house', 'casawplg').'</label>
+									                    <label for="casawplgHouse" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off control-label">'.__('Single-family house', 'casawplg').'</label>
 									                    <input type="radio" class="casawp-lg_togglebox__switchinput" name="extra_data[Objektart]" value="Eigentumswohnung" id="casawplgApartment">
-									                    <label for="casawplgApartment" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on">'.__('Condominium', 'casawplg').'</label>
+									                    <label for="casawplgApartment" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on control-label">'.__('Condominium', 'casawplg').'</label>
 									                    <span class="casawp-lg_togglebox__switchselection"></span>
 									                </div>
 									            </div>
 									            <div class="casawp-lg_range">
-									                <span>'.__('Property surface', 'casawplg').' (m<sup>2</sup>)</span>
-									                <input type="range" min="1" max="1500" step="1" value="500" name="extra_data[Grundstücksfläche]" data-rangeslider>
+									                <label class="control-label">'.__('Property surface', 'casawplg').' (m<sup>2</sup>)</label>
+									                <input type="range" min="1" max="1500" step="1" value="400" id="casawp-lg-property-surface" name="extra_data[Grundstücksfläche]" data-rangeslider>
 									                <div class="clearfix"></div>
 									            </div>
 									            <div class="casawp-lg_range">
-									                <span>'.__('Net living area', 'casawplg').' (m<sup>2</sup>)</span>
-									                <input type="range" min="1" max="300" step="1" value="300" name="extra_data[Nettowohnfläche]" data-rangeslider>
+									                <label class="control-label">'.__('Net living area', 'casawplg').' (m<sup>2</sup>)</label>
+									                <input type="range" min="1" max="300" step="1" value="100" name="extra_data[Nettowohnfläche]" data-rangeslider>
 									                <div class="clearfix"></div>
 									            </div>
 									            <div class="casawp-lg_range">
-									                <span>'.__('Number of rooms', 'casawplg').'</span>
+									                <label class="control-label">'.__('Number of rooms', 'casawplg').'</label>
 									                <input type="range" min="1" max="10" step="0.5" name="extra_data[Anzahl Zimmer]" value="3" data-rangeslider>
 									                <div class="clearfix"></div>
 									            </div>
 									            <div class="casawp-lg_range">
-									                <span>'.__('Building year', 'casawplg').'</span>
+									                <label class="control-label">'.__('Number of bathrooms', 'casawplg').'</label>
+									                <input type="range" min="1" max="10" step="1" id="casawp-lg-bathroom" name="extra_data[Anzahl Badezimmer]" value="1" data-rangeslider>
+									                <div class="clearfix"></div>
+									            </div>
+									            <div class="casawp-lg_range">
+									                <label class="control-label">'.__('Building year', 'casawplg').'</label>
 									                <input type="range" min="' . (date("Y") - 100) . '" max="' . (date("Y") + 4) . '" step="1" value="' . (date("Y") - 20) . '" name="extra_data[Baujahr]" data-rangeslider>
 									                <div class="clearfix"></div>
 									            </div>
@@ -384,21 +389,58 @@
 									                </div>
 									            </div>
 									            <div class="row">
-									                <div class="col-lg-6">
+									                <div class="col-lg-12">
 									                    <div class="form-group">
-									                        <div class="casawp-lg_radiotitle">'.__('Estimation reason', 'casawplg').'</div>
-									                        <select name="extra_data[Bewertungsgrund]" id="casawp-lg_persontype">
-									                            <option value="'.__('Sell', 'casawplg').'">'.__('Sell', 'casawplg').'</option>
-									                            <option value="'.__('Buy', 'casawplg').'">'.__('Buy', 'casawplg').'</option>
-									                            <option value="'.__('Financing', 'casawplg').'">'.__('Financing', 'casawplg').'</option>
-									                            <option value="'.__('Other', 'casawplg').'">'.__('Other', 'casawplg').'</option>
-									                        </select>
+									                   		<label class="control-label">'.__('Estimation reason', 'casawplg').'</label>
+									                    	<div class="casawp-lg_custom-choices">
+										                        <div class="casawp-lg-checkboxoption">
+										                        	<input
+										                        		tabindex="0"
+										                        		id="choice_sell"
+										                        		type="checkbox"
+										                        		name="extra_data[' . __('Sell', 'casawplg') . ']"
+										                        		value="Ja"
+										                        	/>
+										                        	<label for="choice_sell">' . __('Sell', 'casawplg') . '</label>
+										                        </div>
+										                        <div class="casawp-lg-checkboxoption">
+										                        	<input
+										                        		tabindex="0"
+										                        		id="choice_buy"
+										                        		type="checkbox"
+										                        		name="extra_data[' . __('Buy', 'casawplg') . ']"
+										                        		value="Ja"
+										                        	/>
+										                        	<label for="choice_buy">' . __('Buy', 'casawplg') . '</label>
+										                        </div>
+										                        <div class="casawp-lg-checkboxoption">
+										                        	<input
+										                        		tabindex="0"
+										                        		id="choice_financing"
+										                        		type="checkbox"
+										                        		name="extra_data[' . __('Financing', 'casawplg') . ']"
+										                        		value="Ja"
+										                        	/>
+										                        	<label for="choice_financing">' . __('Financing', 'casawplg') . '</label>
+										                        </div>
+										                        <div class="casawp-lg-checkboxoption">
+										                        	<input
+										                        		tabindex="0"
+										                        		id="choice_other"
+										                        		type="checkbox"
+										                        		name="extra_data[' . __('Other', 'casawplg') . ']"
+										                        		value="Ja"
+										                        	/>
+										                        	<label for="choice_other">' . __('Other', 'casawplg') . '</label>
+										                        </div>
+									                        </div>
 									                    </div>
 									                </div>
 									            </div>
 									        </div>';
 									echo apply_filters('clg_render_contactform', $html);
 								?>
+
 								<div class="casawp-lg_buttons multi_buttons">
 									<?php 
 										$html = '<a href="#" class="btn btn-primary btn-backward">
@@ -422,47 +464,60 @@
 	</div>
 <?php endif ?>
 <?php if ($message): ?>
-	<div class="casawp-lg_slide">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="casawp-lg_slideinner">
-					<div class="casawp-lg_coltitle_outer">
-						<div class="row">
-							<div class="col-lg-8">
-								<?php 
-									$html = '<h2>Die Bewertung wurde erfolgreich abgeschlossen</h2>
-			       							<p>Sie werden in Kürze Ihre Bewertungsinformationen per E-Mail erhalten.</p>';
-									echo apply_filters('clg_render_sentmessage', $html);
-								?>
-							</div>
-							<div class="col-lg-4">
-								<div class="casawp-lg_counter">
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											1
-										</span>
+	<div class="casawp-lg-wrapper casawp-lg-sent" id="clgContactForm" style="display: block;">
+		<div class="casawp-lg-wrapper_inner">
+			<form id="clgFormAnchor" action="#clgFormAnchor" method="POST" enctype="multipart/form-data">
+				<div class="casawp-lg_slide">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="casawp-lg_slideinner">
+								<div class="casawp-lg_coltitle_outer">
+									<div class="row">
+										<div class="col-lg-8">
+											
+										</div>
+										<div class="col-lg-4">
+											<div class="casawp-lg_counter">
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														1
+													</span>
+												</div>
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														2
+													</span>
+												</div>
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														3
+													</span>
+												</div>
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														4
+													</span>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											2
-										</span>
-									</div>
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											3
-										</span>
-									</div>
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											4
-										</span>
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="casawp_centerslide">
+												<?php 
+													$html = '<h2>Die Bewertung wurde erfolgreich abgeschlossen</h2>
+							       							<p>Sie werden in Kürze Ihre Bewertungsinformationen per E-Mail erhalten.</p>';
+													echo apply_filters('clg_render_sentmessage', $html);
+												?>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 <?php endif ?>
