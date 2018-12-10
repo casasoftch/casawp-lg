@@ -350,12 +350,12 @@
 									$html = '<div class="casawp-lg_contactform">
 									            <div class="form-group">
 									                <div class="casawp-lg_toggle">
-									                    <span class="casawp-lg_spanlabel">'.__('Salutation', 'casawplg').'</span>
+									                    <label class="casawp-lg_spanlabel control-label">'.__('Salutation', 'casawplg').'</label>
 									                    <div class="casawp-lg_togglebox">
 									                        <input type="radio" class="casawp-lg_togglebox__switchinput" name="casawplg-inquiry[gender]" value="Frau" id="casawp-lg-gender_woman" checked>
-									                        <label for="casawp-lg-gender_woman" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off">Frau</label>
+									                        <label for="casawp-lg-gender_woman" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off control-label">Frau</label>
 									                        <input type="radio" class="casawp-lg_togglebox__switchinput" name="casawplg-inquiry[gender]" value="Herr" id="casawp-lg-gender_man">
-									                        <label for="casawp-lg-gender_man" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on">Herr</label>
+									                        <label for="casawp-lg-gender_man" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on control-label">Herr</label>
 									                        <span class="casawp-lg_togglebox__switchselection"></span>
 									                    </div>
 									                </div>
