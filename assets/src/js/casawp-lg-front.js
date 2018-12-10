@@ -99,13 +99,22 @@ jQuery( function () {
 
 	          // For each place, get the icon, name and location.
 	          var bounds = new google.maps.LatLngBounds();
+						var country = '';
 	          places.forEach(function(place) {
 	            if (!place.geometry) {
 	              console.log("Returned place contains no geometry");
 	              return;
-	            }
-
-	          document.getElementById('cityName').value = place.name;
+							}
+							if (place.address_components) {
+								var countryItem = place.address_components.find(function(item) {
+									return item.types.indexOf('country') !== -1;
+								});
+								if (countryItem) {
+									country = countryItem.short_name ? countryItem.short_name : '';
+								}
+							}
+							document.getElementById('countryName').value = country;
+	          	document.getElementById('cityName').value = place.name;
               document.getElementById('cityLat').value = place.geometry.location.lat();
               document.getElementById('cityLng').value = place.geometry.location.lng();
               

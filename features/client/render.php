@@ -96,6 +96,8 @@ class render extends Feature {
 
                     do_action('clg_before_inquirysend', $formData);
 
+                    $this->prepareData($formData);
+                    die();
                     $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
                     if ($casamail_msgs) {
                         $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
@@ -319,7 +321,7 @@ class render extends Feature {
         }
     }
 
-    private function createIaziEvaluation() {
+    private function prepareData($formData) {
         /*
             Array[
                 UserEvaluationInput {
@@ -346,6 +348,49 @@ class render extends Feature {
             ]
         */
 
+        print_r($formData);
+        die();
+        
+        $fullData = [
+            "countryCode" => ($formData['Land'] ? $formData['Land'] : null),
+            "categoryCode" => ($formData['Objektart'] ? $formData['Objektart'] : null),
+            "culture" => ($formData['culture'] ? $formData['culture'] : null),
+            "externalKey" => ($formData['externalKey'] ? $formData['externalKey'] : null),
+            "latitude" => ($formData['latitude'] ? $formData['latitude'] : 0),
+            "longitude" => ($formData['longitude'] ? $formData['longitude'] : 0),
+            "surfaceLiving" => ($formData['Nettowohnfläche'] ? $formData['Nettowohnfläche'] : 0),
+            "surfaceGround" => ($formData['Grundstücksfläche'] ? $formData['Grundstücksfläche'] : 0),
+            "roomNb" => ($formData['roomNb'] ? $formData['roomNb'] : 0),
+            "bathNb" => ($formData['bathNb'] ? $formData['bathNb'] : 0),
+            "buildYear" => ($formData['buildYear'] ? $formData['buildYear'] : 0),
+            "name" => ($formData['name'] ? $formData['name'] : null),
+            "surname" => ($formData['surname'] ? $formData['surname'] : null),
+            "sale" => ($formData['sale'] ? $formData['sale'] : false),
+            "purchase" => ($formData['purchase'] ? $formData['purchase'] : false),
+            "financing" => ($formData['financing'] ? $formData['financing'] : false),
+            "other" => ($formData['other'] ? $formData['other'] : false),
+            "email" => ($formData['email'] ? $formData['email'] : null),
+            "mobile" => ($formData['mobile'] ? $formData['mobile'] : null),
+        ];
+
+        // matchingData
+        $matchingData = [];
+        // match categoryCode
+        switch ($fullData['categoryCode']) {
+            case 'Einfamilienhaus':
+                $requestData['categoryCode'] = 5;
+                break;
+            case 'Eigentumswohnung':
+                $requestData['categoryCode'] = 6;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private function createIaziEvaluation() {
+        
+
 
 
 
@@ -353,27 +398,7 @@ class render extends Feature {
         $Salt = 'de7a3576-b0f8-4dc4-8aa2-99df4c91c94d-34c6cc8a-7940-4561-99c6-3baf3e237f33';
         $RecaptchaSiteKey = '6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp';
 
-        $request = [
-            "countryCode" => $_POST['countryCode'] ? $_POST['countryCode'] : '',
-            "categoryCode" => $_POST['categoryCode'] ? $_POST['categoryCode'] : 0,
-            "culture" => $_POST['culture'] ? $_POST['culture'] : '',
-            "externalKey" => $_POST['externalKey'] ? $_POST['externalKey'] : '',
-            "latitude" => $_POST['latitude'] ? $_POST['latitude'] : 0,
-            "longitude" => $_POST['longitude'] ? $_POST['longitude'] : 0,
-            "surfaceLiving" => $_POST['surfaceLiving'] ? $_POST['surfaceLiving'] : 0,
-            "surfaceGround" => $_POST['surfaceGround'] ? $_POST['surfaceGround'] : 0,
-            "roomNb" => $_POST['roomNb'] ? $_POST['roomNb'] : 0,
-            "bathNb" => $_POST['bathNb'] ? $_POST['bathNb'] : 0,
-            "buildYear" => $_POST['buildYear'] ? $_POST['buildYear'] : 0,
-            "name" => $_POST['name'] ? $_POST['name'] : '',
-            "surname" => $_POST['surname'] ? $_POST['surname'] : '',
-            "sale" => $_POST['sale'] ? $_POST['sale'] : false,
-            "purchase" => $_POST['purchase'] ? $_POST['purchase'] : false,
-            "financing" => $_POST['financing'] ? $_POST['financing'] : false,
-            "other" => $_POST['other'] ? $_POST['other'] : false,
-            "email" => $_POST['email'] ? $_POST['email'] : '',
-            "mobile" => $_POST['mobile'] ? $_POST['mobile'] : '',
-        ];
+        
 
         $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/evaluationResult";
         $liveUrl = "https://api.iazi.ch/api/hedolight";

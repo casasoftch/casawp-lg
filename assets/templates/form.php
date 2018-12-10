@@ -158,6 +158,7 @@
 									                </div>
 									            </div>
 									            <div id="casawp-lg_map"></div>
+									            <input required type="hidden" id="countryName" name="extra_data[Land]">
 									            <input required type="hidden" id="cityName" name="extra_data[Ort]">
 									            <input required type="hidden" id="cityLat" name="extra_data[Lat]">
 									            <input required type="hidden" id="cityLng" name="extra_data[Lng]">

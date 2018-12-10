@@ -12,7 +12,9 @@ gulp.task('less', function() {
 
 gulp.task('js', function(){
 	gulp.src(['js/casawp-lg-front.js', 'node_modules/rangeslider.js/dist/rangeslider.js'])
-		.pipe(uglify())
+		.pipe(uglify().on('error', function(e){
+			console.log(e);
+		}))
 		.pipe(concat('casawp-lg-front.min.js'))
 		.pipe(gulp.dest('./../js'))
 	;
