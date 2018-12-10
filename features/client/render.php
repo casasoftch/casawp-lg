@@ -1,7 +1,10 @@
 <?php
 namespace casasoft\casawplg;
 
-
+/*
+	provider/publisher/directmail -> CASAMAIL is given
+	IAZI option needs to be added for providing License Key given from IAZI to identify customer and their config
+*/
 class render extends Feature {
 
 	public function __construct() {
@@ -103,6 +106,10 @@ class render extends Feature {
 
 					//empty form
 					$formData = $this->getFormData(true);
+
+					
+
+
 				}
 			} else {
 				$msg = __('Please check the following and try again:', 'casawplg');
