@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Starter Kit 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 14:04+0100\n"
-"PO-Revision-Date: 2018-12-06 14:04+0100\n"
+"POT-Creation-Date: 2018-12-10 14:03+0100\n"
+"PO-Revision-Date: 2018-12-10 14:03+0100\n"
 "Last-Translator: Jens Stalder <js@casasoft.ch>\n"
 "Language-Team: aut0poietic\n"
 "Language: de_DE\n"
@@ -1910,9 +1910,9 @@ msgctxt "Date Time Picker JS pmTextShort"
 msgid "P"
 msgstr ""
 
-#: ../assets/acf/fields/email.php:36
+#: ../assets/acf/fields/email.php:36 ../assets/templates/form.php:380
 #: ../features/admin/inquiry_archive_cols.php:17
-#: ../features/admin/inquiry_metabox.php:161 ../features/client/render.php:163
+#: ../features/admin/inquiry_metabox.php:161
 #: ../features/core/field_manager.php:46
 msgid "Email"
 msgstr "E-Mail"
@@ -2300,7 +2300,8 @@ msgstr ""
 msgid "Radio Button"
 msgstr ""
 
-#: ../assets/acf/fields/radio.php:261 ../features/client/render.php:182
+#: ../assets/acf/fields/radio.php:261 ../assets/templates/form.php:431
+#: ../assets/templates/form.php:434
 msgid "Other"
 msgstr "Andere"
 
@@ -3141,6 +3142,78 @@ msgstr ""
 msgid "Maximum Rows"
 msgstr ""
 
+#: ../assets/templates/form.php:155
+msgid "Where is the property located?"
+msgstr "Wo befindet sich Ihre Immobilie?"
+
+#: ../assets/templates/form.php:241
+msgid "Property type"
+msgstr "Objektart"
+
+#: ../assets/templates/form.php:244
+msgid "Single-family house"
+msgstr "Einfamilienhaus"
+
+#: ../assets/templates/form.php:246
+msgid "Condominium"
+msgstr "Eigentumswohnung"
+
+#: ../assets/templates/form.php:251
+msgid "Property surface"
+msgstr "Grundstücksfläche"
+
+#: ../assets/templates/form.php:256
+msgid "Net living area"
+msgstr "Nettowohnfläche"
+
+#: ../assets/templates/form.php:261
+msgid "Number of rooms"
+msgstr "Anzahl Zimmer"
+
+#: ../assets/templates/form.php:266
+msgid "Number of bathrooms"
+msgstr "Anzahl Badezimmer"
+
+#: ../assets/templates/form.php:271
+msgid "Building year"
+msgstr "Baujahr"
+
+#: ../assets/templates/form.php:353 ../features/admin/inquiry_metabox.php:133
+msgid "Salutation"
+msgstr "Anrede"
+
+#: ../assets/templates/form.php:366 ../features/admin/inquiry_metabox.php:142
+#: ../features/core/field_manager.php:34
+msgid "First name"
+msgstr "Vorname"
+
+#: ../assets/templates/form.php:372 ../features/admin/inquiry_metabox.php:151
+#: ../features/core/field_manager.php:38
+msgid "Last name"
+msgstr "Nachname"
+
+#: ../assets/templates/form.php:386 ../features/admin/inquiry_metabox.php:170
+#: ../features/core/field_manager.php:42
+msgid "Mobile"
+msgstr ""
+
+#: ../assets/templates/form.php:394
+msgid "Estimation reason"
+msgstr "Bewertungsgrund"
+
+#: ../assets/templates/form.php:401 ../assets/templates/form.php:404
+msgid "Sell"
+msgstr "Verkaufen"
+
+#: ../assets/templates/form.php:411 ../assets/templates/form.php:414
+#: ../features/admin/unit_metabox.php:344
+msgid "Buy"
+msgstr "Kaufen"
+
+#: ../assets/templates/form.php:421 ../assets/templates/form.php:424
+msgid "Financing"
+msgstr "Finanzieren"
+
 #: ../features/admin/building_metabox.php:80
 msgid "Visible"
 msgstr "Sichtbar"
@@ -3203,25 +3276,6 @@ msgstr "Wähle oder lade ein Dokument hoch"
 #: ../features/admin/unit_metabox.php:149
 msgid "Use this document"
 msgstr "Verwende dieses Dokument"
-
-#: ../features/admin/inquiry_metabox.php:133 ../features/client/render.php:136
-msgid "Salutation"
-msgstr "Anrede"
-
-#: ../features/admin/inquiry_metabox.php:142 ../features/client/render.php:149
-#: ../features/core/field_manager.php:34
-msgid "First name"
-msgstr "Vorname"
-
-#: ../features/admin/inquiry_metabox.php:151 ../features/client/render.php:155
-#: ../features/core/field_manager.php:38
-msgid "Last name"
-msgstr "Nachname"
-
-#: ../features/admin/inquiry_metabox.php:170 ../features/client/render.php:169
-#: ../features/core/field_manager.php:42
-msgid "Mobile"
-msgstr ""
 
 #: ../features/admin/post_type_icons.php:33
 msgid "Post Type Icons"
@@ -3328,10 +3382,6 @@ msgstr "Terrassenfläche"
 msgid "Balcony Space"
 msgstr "Balkonfläche"
 
-#: ../features/admin/unit_metabox.php:344 ../features/client/render.php:180
-msgid "Buy"
-msgstr "Kaufen"
-
 #: ../features/admin/unit_metabox.php:348
 msgid "Currency"
 msgstr "Währung"
@@ -3423,55 +3473,11 @@ msgstr "Falsche Absendung"
 msgid "Please choose a unit"
 msgstr "Bitte wählen Sie ein Objekt"
 
-#: ../features/client/render.php:177
-msgid "Estimation reason"
-msgstr "Bewertungsgrund"
-
-#: ../features/client/render.php:179
-msgid "Sell"
-msgstr "Verkaufen"
-
-#: ../features/client/render.php:181
-msgid "Financing"
-msgstr "Finanzieren"
-
-#: ../features/client/render.php:195
-msgid "Property type"
-msgstr "Objektart"
-
-#: ../features/client/render.php:198
-msgid "Single-family house"
-msgstr "Einfamilienhaus"
-
-#: ../features/client/render.php:200
-msgid "Condominium"
-msgstr "Eigentumswohnung"
-
-#: ../features/client/render.php:205
-msgid "Property surface"
-msgstr "Grundstücksfläche"
-
-#: ../features/client/render.php:210
-msgid "Net living area"
-msgstr "Nettowohnfläche"
-
-#: ../features/client/render.php:215
-msgid "Number of rooms"
-msgstr "Anzahl Zimmer"
-
-#: ../features/client/render.php:220
-msgid "Building year"
-msgstr "Baujahr"
-
-#: ../features/client/render.php:232
-msgid "Where is the property located?"
-msgstr "Wo befindet sich Ihre Immobilie?"
-
-#: ../features/client/render.php:411
+#: ../features/client/render.php:78
 msgid "Inquiry has been sent. Thank you!"
 msgstr "Ihre Anfrage wurde versendet. Besten Dank!"
 
-#: ../features/client/render.php:441
+#: ../features/client/render.php:108
 msgid "Please check the following and try again:"
 msgstr "Bitte überprüfen Sie folgendes und versuchen Sie es erneut:"
 
