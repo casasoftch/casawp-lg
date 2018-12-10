@@ -26,6 +26,18 @@
 	justify-content: space-between;
 }
 
+.casawp-lg-sent{
+	.casawp-lg_slide{
+		position: relative;
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.casawp_centerslide{
+	text-align: center;
+}
+
 .casawp-lg_slide{
 	position: absolute;
 	width: 100%;
@@ -289,4 +301,58 @@
 
 .casawp-lg_radiotitle{
 	margin-bottom: 15px;
+}
+
+.casawp-lg_custom-choices{
+	margin-top: 15px;
+	margin-bottom: 20px;
+	&:after{
+		display: block;
+	    content: "";
+	    clear: both;
+	}
+}
+
+.casawp-lg-checkboxoption input[type=checkbox]+label{
+	height: 27px;
+}
+
+.casawp-lg-checkboxoption{
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin-right: 30px;
+	input[type=checkbox] {
+   	position: absolute;
+   	left: 6px;
+   	top: 5px;
+   	opacity: 0;
+   	display: block;
+  }
+  input[type=checkbox] + label{
+  	background-image: url('/wp-content/plugins/casawp-lg/assets/img/unchecked.png');
+  	background-size: 25px 25px;
+	height: 25px;
+	cursor: pointer;
+	padding-left: 35px;
+	line-height: 25px;
+	background-repeat: no-repeat;
+	transition: 0.2s all ease;
+	margin-bottom: 20px;
+  }
+	input[type=checkbox]:checked + label{
+		background-image: url('/wp-content/plugins/casawp-lg/assets/img/checked.png');
+  		color: black;
+	}
+  input[type=checkbox]:focus + label{
+  	box-shadow: none;
+  }
+	input[type=checkbox] + label:after
+	{
+		opacity: 0;
+	}
+   input[type=checkbox]:checked + label:after
+    {
+		opacity: 1;
+    }
 }
