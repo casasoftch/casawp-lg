@@ -422,47 +422,60 @@
 	</div>
 <?php endif ?>
 <?php if ($message): ?>
-	<div class="casawp-lg_slide">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="casawp-lg_slideinner">
-					<div class="casawp-lg_coltitle_outer">
-						<div class="row">
-							<div class="col-lg-8">
-								<?php 
-									$html = '<h2>Die Bewertung wurde erfolgreich abgeschlossen</h2>
-			       							<p>Sie werden in Kürze Ihre Bewertungsinformationen per E-Mail erhalten.</p>';
-									echo apply_filters('clg_render_sentmessage', $html);
-								?>
-							</div>
-							<div class="col-lg-4">
-								<div class="casawp-lg_counter">
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											1
-										</span>
+	<div class="casawp-lg-wrapper casawp-lg-sent" id="clgContactForm" style="display: block;">
+		<div class="casawp-lg-wrapper_inner">
+			<form id="clgFormAnchor" action="#clgFormAnchor" method="POST" enctype="multipart/form-data">
+				<div class="casawp-lg_slide">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="casawp-lg_slideinner">
+								<div class="casawp-lg_coltitle_outer">
+									<div class="row">
+										<div class="col-lg-8">
+											
+										</div>
+										<div class="col-lg-4">
+											<div class="casawp-lg_counter">
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														1
+													</span>
+												</div>
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														2
+													</span>
+												</div>
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														3
+													</span>
+												</div>
+												<div>
+													<span class="casawp-lg_number bg-primary">
+														4
+													</span>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											2
-										</span>
-									</div>
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											3
-										</span>
-									</div>
-									<div>
-										<span class="casawp-lg_number bg-primary">
-											4
-										</span>
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="casawp_centerslide">
+												<?php 
+													$html = '<h2>Die Bewertung wurde erfolgreich abgeschlossen</h2>
+							       							<p>Sie werden in Kürze Ihre Bewertungsinformationen per E-Mail erhalten.</p>';
+													echo apply_filters('clg_render_sentmessage', $html);
+												?>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 <?php endif ?>
