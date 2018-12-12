@@ -109,24 +109,31 @@ class render extends Feature {
                     do_action('clg_before_inquirysend', $formData);
 
                     $validCaptcha = null;
-                    if (isset($formData['g-recaptcha-response'])) {
-                        $validCaptcha = $this->verifyIaziCaptcha($formData['g-recaptcha-response']);
+                    // print_r($formData);
+                    if (isset($formData['captcha_response'])) {
+                        $validCaptcha = $this->verifyIaziCaptcha($formData['captcha_response']);
                     }
-                    if ($validCaptcha) {
+                    if ($validCaptcha &&  $validCaptcha === 'success') {
                         $preparedData = $this->prepareData($formData);
-                        print_r($validCaptcha);
-                        die();
+                        if (true) { // needs the option what to send
+                            $iaziEvaluationResponse = $this->sendIAZIEvaluation($preparedData);
+                            // print_r($iaziEvaluationResponse);
+                            // die();
+                        } else {
+                            $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
+                            if ($casamail_msgs) {
+                                $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
+                                $state = 'danger';
+                            }
+                        }
+    
+                        do_action('clg_after_inquirysend', $formData);
+    
+                        //empty form
+                        $formData = $this->getFormData(true);
+                    } else {
+                        print('There was an error with captcha');
                     }
-                    $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
-                    if ($casamail_msgs) {
-                        $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
-                        $state = 'danger';
-                    }
-
-                    do_action('clg_after_inquirysend', $formData);
-
-                    //empty form
-                    $formData = $this->getFormData(true);
 
                     
 
@@ -475,17 +482,16 @@ class render extends Feature {
     }
 
     private function sendIAZIEvaluation($requestData) {
-        $body = json_encode($requestData, true);
+        // print_r($requestData);
+        $body = json_encode([$requestData], true);
 
         $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/evaluationResult";
         $liveUrl = "https://api.iazi.ch/api/hedolight/v1/evaluationResult";
 
-        $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/getclient";
-
         $x = $this->LicenseKey;
         $t = time();
         $z = $this->Salt;
-        $h = $this->auth['hash'];
+        $hash = base64_encode(hash('sha512', $x.$t.$z, true));
         $curl = curl_init();
 
         curl_setopt_array(
@@ -497,14 +503,15 @@ class render extends Feature {
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => $body,
                 CURLOPT_REFERER => 'http://hypoimmo.local',
                 CURLOPT_HTTPHEADER => [
+                    "Content-Type: application/json",
                     "cache-control: no-cache",
                     "t: $t",
                     "x: $x",
-                    "h: $h"
+                    "h: $hash"
                 ],
             ]
         );
@@ -515,9 +522,9 @@ class render extends Feature {
         curl_close($curl);
 
         if ($err) {
-            echo "cURL Error #:" . $err;
+            return "cURL Error #:" . $err;
         } else {
-            echo $response;
+            return $response;
         }
     }
 
@@ -525,26 +532,28 @@ class render extends Feature {
         $x = $this->LicenseKey;
         $t = time();
         $z = $this->Salt;
-        $h = $this->auth['hash'];
         $curl = curl_init();
+        $hash = base64_encode(hash('sha512', $x.$t.$z, true));
+        $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/verifyCaptcha";
+        $query = '?response='.$captchaResponse;
 
         curl_setopt_array(
             $curl, 
             [
-                CURLOPT_URL => $testUrl,
+                CURLOPT_URL => $testUrl.$query,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_POSTFIELDS => $body,
+                // CURLOPT_POSTFIELDS => $body,
                 CURLOPT_REFERER => 'http://hypoimmo.local',
                 CURLOPT_HTTPHEADER => [
                     "cache-control: no-cache",
                     "t: $t",
                     "x: $x",
-                    "h: $h"
+                    "h: $hash"
                 ],
             ]
         );
@@ -557,7 +566,12 @@ class render extends Feature {
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            echo $response;
+            $decodedResponse = json_decode($response, true);
+            if ($decodedResponse['success']) {
+                return 'success';
+            } else {
+                return false;
+            }
         }
     }
 
