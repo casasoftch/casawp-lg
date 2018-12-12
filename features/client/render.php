@@ -5,7 +5,11 @@ namespace casasoft\casawplg;
     provider/publisher/directmail -> CASAMAIL is given
     IAZI option needs to be added for providing License Key given from IAZI to identify customer and their config
 */
+
+
 class render extends Feature {
+    
+    
 
     public function __construct() {
         //$this->add_action( 'init', 'set_shortcodes' );
@@ -23,13 +27,21 @@ class render extends Feature {
             'gender' => 'That should not be possible',
             'unit_id' => __('Please choose a unit', 'casawplg'),//'Bitte wählen Sie eine Wohnung'
         );
+        
         add_shortcode( 'CLG-form', [$this, 'render_clg_form'] );
-
         add_action('wp_enqueue_scripts', array($this, 'registerScriptsAndStyles'));
+
+        $this->LicenseKey = '3FA5CA0FAC524008A16A4A91C3F473829C1FE75877514A17AA168F64FA10CD80'; // this needs to be coming from options
+        $this->Salt = 'de7a3576-b0f8-4dc4-8aa2-99df4c91c94d-34c6cc8a-7940-4561-99c6-3baf3e237f33';
+        $this->RecaptchaSiteKey = '6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp';
+        $this->alg = 'SHA-512';
+        $this->enc = 'B64';
+        $this->encInit = 'TEXT';
     }
 
     function registerScriptsAndStyles() {
         wp_enqueue_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOPYZoLRaPFSg5JVwr7Le06qPpWd5jCU8&libraries=places', array(), false, true );
+        wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js', array(), false, true );
     }
 
 
@@ -70,7 +82,7 @@ class render extends Feature {
         $template = $this->get_template();
         
         $formData =  $this->getFormData();
-    //	die(print_r($formData));
+        //	die(print_r($formData));
 
         $msg = '';
         $state = '';
@@ -96,8 +108,15 @@ class render extends Feature {
 
                     do_action('clg_before_inquirysend', $formData);
 
-                    $this->prepareData($formData);
-                    die();
+                    $validCaptcha = null;
+                    if (isset($formData['g-recaptcha-response'])) {
+                        $validCaptcha = $this->verifyIaziCaptcha($formData['g-recaptcha-response']);
+                    }
+                    if ($validCaptcha) {
+                        $preparedData = $this->prepareData($formData);
+                        print_r($validCaptcha);
+                        die();
+                    }
                     $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
                     if ($casamail_msgs) {
                         $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
@@ -149,6 +168,7 @@ class render extends Feature {
         if (!$empty) {
             $request = array_merge($_GET, $_POST);
         }
+
         
         if (isset($request['casawplg-inquiry'])) {
             $formData = array_merge($defaults, $request['casawplg-inquiry']);
@@ -157,6 +177,14 @@ class render extends Feature {
         }
         if (isset($request['extra_data'])) {
             $formData['extra_data'] = $request['extra_data'];
+        }
+
+        if (isset($request['g-recaptcha-response'])) {
+            $formData['captcha_response'] = $request['g-recaptcha-response'];
+        }
+
+        if (isset($request['auth'])) {
+            $this->auth = $request['auth'];
         }
 
 
@@ -348,61 +376,116 @@ class render extends Feature {
             ]
         */
 
-        print_r($formData);
-        die();
+        // print_r($formData);
+        // die();
         
         $fullData = [
-            "countryCode" => ($formData['Land'] ? $formData['Land'] : null),
-            "categoryCode" => ($formData['Objektart'] ? $formData['Objektart'] : null),
-            "culture" => ($formData['culture'] ? $formData['culture'] : null),
-            "externalKey" => ($formData['externalKey'] ? $formData['externalKey'] : null),
-            "latitude" => ($formData['latitude'] ? $formData['latitude'] : 0),
-            "longitude" => ($formData['longitude'] ? $formData['longitude'] : 0),
-            "surfaceLiving" => ($formData['Nettowohnfläche'] ? $formData['Nettowohnfläche'] : 0),
-            "surfaceGround" => ($formData['Grundstücksfläche'] ? $formData['Grundstücksfläche'] : 0),
-            "roomNb" => ($formData['roomNb'] ? $formData['roomNb'] : 0),
-            "bathNb" => ($formData['bathNb'] ? $formData['bathNb'] : 0),
-            "buildYear" => ($formData['buildYear'] ? $formData['buildYear'] : 0),
-            "name" => ($formData['name'] ? $formData['name'] : null),
-            "surname" => ($formData['surname'] ? $formData['surname'] : null),
-            "sale" => ($formData['sale'] ? $formData['sale'] : false),
-            "purchase" => ($formData['purchase'] ? $formData['purchase'] : false),
-            "financing" => ($formData['financing'] ? $formData['financing'] : false),
-            "other" => ($formData['other'] ? $formData['other'] : false),
+            "name" => ($formData['first_name'] ? $formData['first_name'] : null),
+            "surname" => ($formData['last_name'] ? $formData['last_name'] : null),
+            "culture" => 'de-CH',
             "email" => ($formData['email'] ? $formData['email'] : null),
             "mobile" => ($formData['mobile'] ? $formData['mobile'] : null),
+            "message" => ($formData['message'] ? $formData['message'] : null),
+            "gender" => ($formData['gender'] ? $formData['gender'] : null),
+            "categoryCode" => ($formData['extra_data']['propertyType'] ? $formData['extra_data']['propertyType'] : null),
+            "countryCode" => ($formData['extra_data']['country'] ? $formData['extra_data']['country'] : null),
+            "latitude" => ($formData['extra_data']['lat'] ? $formData['extra_data']['lat'] : 0),
+            "longitude" => ($formData['extra_data']['lng'] ? $formData['extra_data']['lng'] : 0),
+            "surfaceLiving" => ($formData['extra_data']['areaNwf'] ? $formData['extra_data']['areaNwf'] : 0),
+            "surfaceGround" => ($formData['extra_data']['areaPropertyLand'] ? $formData['extra_data']['areaPropertyLand'] : 0),
+            "roomNb" => ($formData['extra_data']['numberOfRooms'] ? $formData['extra_data']['numberOfRooms'] : 0),
+            "bathNb" => ($formData['extra_data']['numberOfBathrooms'] ? $formData['extra_data']['numberOfBathrooms'] : 0),
+            "buildYear" => ($formData['extra_data']['yearBuilt'] ? $formData['extra_data']['yearBuilt'] : 0),
+            "sale" => ($formData['extra_data']['sell'] ? 1 : 0),
+            "purchase" => ($formData['extra_data']['buy'] ? 1 : 0),
+            "financing" => ($formData['extra_data']['financing'] ? 1 : 0),
+            "other" => ($formData['extra_data']['other'] ? 1 : 0),
         ];
 
-        // matchingData
-        $matchingData = [];
+        // prepareData
+        $prepareData = [];
+
         // match categoryCode
         switch ($fullData['categoryCode']) {
-            case 'Einfamilienhaus':
-                $requestData['categoryCode'] = 5;
+            case 'single-family-house':
+                $prepareData['categoryCode'] = 5;
                 break;
-            case 'Eigentumswohnung':
-                $requestData['categoryCode'] = 6;
+            case 'flat':
+                $prepareData['categoryCode'] = 6;
                 break;
             default:
                 break;
         }
+
+        // external Key
+        $provider = $this->get_option("provider_slug");
+        $publisher = $this->get_option("publisher_slug");
+        $time = time();
+
+        $prepareData['externalKey'] = ($provider ? $provider . '_' : '') . ($publisher ? $publisher . '_' : '') . $time;
+        $prepareData['name'] = $fullData['name'];
+        $prepareData['surname'] = $fullData['surname'];
+        $prepareData['culture'] = $fullData['culture'];
+        $prepareData['email'] = $fullData['email'];
+        $prepareData['mobile'] = $fullData['mobile'];
+        $prepareData['message'] = $fullData['message'];
+        $prepareData['gender'] = $fullData['gender'];
+        $prepareData['countryCode'] = $fullData['countryCode'];
+        $prepareData['latitude'] = $fullData['latitude'];
+        $prepareData['longitude'] = $fullData['longitude'];
+        $prepareData['surfaceLiving'] = $fullData['surfaceLiving'];
+        $prepareData['sale'] = $fullData['sale'];
+        $prepareData['purchase'] = $fullData['purchase'];
+        $prepareData['financing'] = $fullData['financing'];
+        $prepareData['other'] = $fullData['other'];
+        $prepareData['roomNb'] = $fullData['roomNb'];
+        $prepareData['buildYear'] = $fullData['buildYear'];
+
+        if ($prepareData['categoryCode'] == 5 ) {
+            // Einfamilienhaus
+            $prepareData['surfaceGround'] = $fullData['surfaceGround'];
+        } else {
+            // Eigentumswohnung
+            $prepareData['bathNb'] = $fullData['bathNb'];
+        }
+        
+        // language
+        $lang = substr(get_bloginfo('language'), 0, 2);
+        switch ($lang) {
+            case 'de':
+                $prepareData['culture'] = 'de-CH';
+                break;
+            case 'fr':
+                $prepareData['culture'] = 'fr-CH';
+                break;
+            case 'it':
+                $prepareData['culture'] = 'it-CH';
+                break;
+            case 'en':
+                $prepareData['culture'] = 'en-US';
+                break;
+            default:
+                $prepareData['culture'] = 'de-CH';
+                break;
+        }
+        
+        // print_r($prepareData);
+        // die();
+        return $prepareData;
     }
 
-    private function createIaziEvaluation() {
-        
-
-
-
-
-        $LicenseKey = '3FA5CA0FAC524008A16A4A91C3F473829C1FE75877514A17AA168F64FA10CD80';
-        $Salt = 'de7a3576-b0f8-4dc4-8aa2-99df4c91c94d-34c6cc8a-7940-4561-99c6-3baf3e237f33';
-        $RecaptchaSiteKey = '6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp';
-
-        
+    private function sendIAZIEvaluation($requestData) {
+        $body = json_encode($requestData, true);
 
         $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/evaluationResult";
-        $liveUrl = "https://api.iazi.ch/api/hedolight";
+        $liveUrl = "https://api.iazi.ch/api/hedolight/v1/evaluationResult";
 
+        $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/getclient";
+
+        $x = $this->LicenseKey;
+        $t = time();
+        $z = $this->Salt;
+        $h = $this->auth['hash'];
         $curl = curl_init();
 
         curl_setopt_array(
@@ -414,10 +497,54 @@ class render extends Feature {
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => "",
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_POSTFIELDS => $body,
+                CURLOPT_REFERER => 'http://hypoimmo.local',
                 CURLOPT_HTTPHEADER => [
-                    "cache-control: no-cache"
+                    "cache-control: no-cache",
+                    "t: $t",
+                    "x: $x",
+                    "h: $h"
+                ],
+            ]
+        );
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
+    }
+
+    private function verifyIaziCaptcha($captchaResponse) {
+        $x = $this->LicenseKey;
+        $t = time();
+        $z = $this->Salt;
+        $h = $this->auth['hash'];
+        $curl = curl_init();
+
+        curl_setopt_array(
+            $curl, 
+            [
+                CURLOPT_URL => $testUrl,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_POSTFIELDS => $body,
+                CURLOPT_REFERER => 'http://hypoimmo.local',
+                CURLOPT_HTTPHEADER => [
+                    "cache-control: no-cache",
+                    "t: $t",
+                    "x: $x",
+                    "h: $h"
                 ],
             ]
         );

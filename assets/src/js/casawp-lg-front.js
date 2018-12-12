@@ -1,3 +1,48 @@
+
+function iaziVerifyCaptcha(response) {
+	console.log(response);
+	this.iaziGetClient();
+}
+
+function iaziGetClient() {
+	// need to fetch this from an element
+	try {
+		const alg = 'SHA-512';
+		const enc = 'B64';
+		const encInit = 'TEXT';
+		const x = '3FA5CA0FAC524008A16A4A91C3F473829C1FE75877514A17AA168F64FA10CD80';
+		const z = 'de7a3576-b0f8-4dc4-8aa2-99df4c91c94d-34c6cc8a-7940-4561-99c6-3baf3e237f33';
+		const t = moment().unix();
+		const h = x + t + z;
+		const shaObj = new jsSHA(alg, encInit);
+		shaObj.update(h);
+		const hash = shaObj.getHash(enc);
+		document.getElementById('hash').value = hash;
+		console.log(x);
+		console.log(t);
+		console.log(hash);
+		// console.log('hallo');
+		const request = new XMLHttpRequest();
+		const testUrl = 'https://testservices.iazi.ch/api/hedolight/v1/getclient';
+		request.open("GET", testUrl);
+		request.setRequestHeader('Content-Type', 'application/json');
+		request.setRequestHeader('x', x);
+		request.setRequestHeader('t', t);
+		request.setRequestHeader('h', hash);
+		request.onload = function () {
+			var users = JSON.parse(request.responseText);
+			if (request.readyState == 4 && request.status == "200") {
+				console.log(users);
+			} else {
+				console.log(users);
+			}
+		}
+		request.send(null);
+	} catch (error) {
+		console.log(error);
+	}
+}
+
 jQuery( function () {
 	"use strict";
 
@@ -61,13 +106,13 @@ jQuery( function () {
 		    }
 		});
 
-		if ($('input[name="extra_data[Objektart]"]:checked').val() == 'Einfamilienhaus') {
+		if ($('input[name="extra_data[propertyType]"]:checked').val() == 'single-family-house') {
 			$('#casawp-lg-property-surface').parent().show();
 			$('#casawp-lg-bathroom').parent().hide();
 		}
 
-		$('input[type="radio"][name="extra_data[Objektart]"]').change(function(){
-			if ($('input[name="extra_data[Objektart]"]:checked').val() == 'Einfamilienhaus') {
+		$('input[type="radio"][name="extra_data[propertyType]"]').change(function(){
+			if ($('input[name="extra_data[propertyType]"]:checked').val() == 'single-family-house') {
 				$('#casawp-lg-property-surface').parent().show();
 				$('#casawp-lg-bathroom').parent().hide();
 			} else {
@@ -75,7 +120,6 @@ jQuery( function () {
 				$('#casawp-lg-bathroom').parent().show();
 			}
 		});
-
 
 		function initAutocomplete() {
 	        var map = new google.maps.Map(document.getElementById('casawp-lg_map'), {
@@ -94,7 +138,14 @@ jQuery( function () {
 	        // Bias the SearchBox results towards current map's viewport.
 	        map.addListener('bounds_changed', function() {
 	          searchBox.setBounds(map.getBounds());
-	        });
+					});
+					
+					google.maps.event.addDomListener(input, 'keydown', function(event) {
+						if (event.keyCode === 13) {
+							// ENTER
+							event.preventDefault();
+						} 
+					});
 
 	        var markers = [];
 	        // Listen for the event fired when the user selects a prediction and retrieve
@@ -102,7 +153,7 @@ jQuery( function () {
 	        searchBox.addListener('places_changed', function() {
 	          var places = searchBox.getPlaces();
 
-	          if (places.length == 0) {
+						if (places.length == 0) {
 	            return;
 	          }
 
