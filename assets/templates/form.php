@@ -440,7 +440,7 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <!-- needs to be taken from options -->
-                                                            <div class="g-recaptcha" data-sitekey="6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp"></div>
+                                                            <div class="g-recaptcha" data-callback="verifyCaptcha" data-sitekey="6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp"></div>
                                                         </div>
                                                     </div>
                                                 </div>

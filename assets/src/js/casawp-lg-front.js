@@ -1,3 +1,7 @@
+function verifyCaptcha(event) {
+	console.log(event);
+}
+
 jQuery( function () {
 	"use strict";
 
