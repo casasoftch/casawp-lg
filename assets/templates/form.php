@@ -441,7 +441,6 @@
                                                         <div class="form-group">
                                                             <!-- needs to be taken from options -->
                                                             <div class="g-recaptcha" data-sitekey="6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp"></div>
-                                                            <input required type="hidden" id="hash" name="auth[hash]">
                                                         </div>
                                                     </div>
                                                 </div>
