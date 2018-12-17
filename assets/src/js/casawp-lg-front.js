@@ -1,5 +1,6 @@
 function verifyCaptcha(event) {
 	console.log(event);
+	jQuery('button[type=submit]').removeAttr('disabled').removeAttr('style');
 }
 
 jQuery( function () {

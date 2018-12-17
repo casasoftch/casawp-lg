@@ -100,6 +100,22 @@ class general_options extends Feature
         );*/
 
         add_settings_field(
+            'iazikey_url',
+             __( '<strong>IAZI</strong><span style="font-weight:100">evaluation</span> URL', 'casawplg' ),
+            array( $this, 'iazikey_url_callback' ),
+            'casawp-lg-admin',
+            'clg_1'
+        );
+
+        add_settings_field(
+            'iazievaluation_key',
+             __( '<strong>IAZI</strong><span style="font-weight:100">evaluation</span> Key', 'casawplg' ),
+            array( $this, 'iazievaluation_key_callback' ),
+            'casawp-lg-admin',
+            'clg_1'
+        );
+
+        add_settings_field(
             'global_direct_recipient_email',
              __( '<strong>CASA</strong><span style="font-weight:100">MAIL</span> direkte E-Mail', 'casawplg' ),
             array( $this, 'global_direct_recipient_email_callback' ),
@@ -148,6 +164,14 @@ class general_options extends Feature
             $new_input['id_number'] = absint( $input['id_number'] );
         }
 
+        if( isset( $input['iazikey_url'] ) ) {
+            $new_input['iazikey_url'] = sanitize_text_field( $input['iazikey_url'] );
+        }
+
+        if( isset( $input['iazievaluation_key'] ) ) {
+            $new_input['iazievaluation_key'] = sanitize_text_field( $input['iazievaluation_key'] );
+        }
+
         if( isset( $input['global_direct_recipient_email'] ) ) {
             $new_input['global_direct_recipient_email'] = sanitize_text_field( $input['global_direct_recipient_email'] );
         }
@@ -184,6 +208,22 @@ class general_options extends Feature
         printf(
             '<input type="text" id="id_number" name="casawp_lg[id_number]" value="%s" />',
             isset( $this->options['id_number'] ) ? esc_attr( $this->options['id_number']) : ''
+        );
+    }
+
+    public function iazikey_url_callback()
+    {
+        printf(
+            '<input type="text" id="iazikey_url" name="casawp_lg[iazikey_url]" value="%s" />',
+            isset( $this->options['iazikey_url'] ) ? esc_attr( $this->options['iazikey_url']) : ''
+        );
+    }
+
+    public function iazievaluation_key_callback()
+    {
+        printf(
+            '<input type="text" id="iazievaluation_key" name="casawp_lg[iazievaluation_key]" value="%s" />',
+            isset( $this->options['iazievaluation_key'] ) ? esc_attr( $this->options['iazievaluation_key']) : ''
         );
     }
 

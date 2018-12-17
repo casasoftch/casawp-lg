@@ -31,7 +31,7 @@ class render extends Feature {
         add_shortcode( 'CLG-form', [$this, 'render_clg_form'] );
         add_action('wp_enqueue_scripts', array($this, 'registerScriptsAndStyles'));
 
-        $this->LicenseKey = '3FA5CA0FAC524008A16A4A91C3F473829C1FE75877514A17AA168F64FA10CD80'; // this needs to be coming from options
+        $this->LicenseKey = $this->get_option("iazievaluation_key"); // this needs to be coming from options
         $this->Salt = 'de7a3576-b0f8-4dc4-8aa2-99df4c91c94d-34c6cc8a-7940-4561-99c6-3baf3e237f33';
         $this->RecaptchaSiteKey = '6LdEPXEUAAAAAFmTE5tfxTTT42SZuarZcK1kLHvp';
         $this->alg = 'SHA-512';
@@ -117,7 +117,7 @@ class render extends Feature {
                     }
                     if ($validCaptcha &&  $validCaptcha === 'success') {
                         $preparedData = $this->prepareData($formData);
-                        if (true) { // needs the option what to send
+                        if ($this->LicenseKey) { // needs the option what to send
                             $iaziEvaluationResponse = $this->sendIAZIEvaluation($preparedData);
                             // print_r($iaziEvaluationResponse);
                             // die();
@@ -506,7 +506,11 @@ class render extends Feature {
         $z = $this->Salt;
         $hash = base64_encode(hash('sha512', $x.$t.$z, true));
         $curl = curl_init();
-
+        if ($this->get_option("iazikey_url")) {
+            $thisUrl = $this->get_option("iazikey_url");
+        } else {
+            $thisUrl = get_site_url();
+        }
         curl_setopt_array(
             $curl, 
             [
@@ -518,7 +522,7 @@ class render extends Feature {
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => $body,
-                CURLOPT_REFERER => 'http://hypoimmo.local',
+                CURLOPT_REFERER => $thisUrl,
                 CURLOPT_HTTPHEADER => [
                     "Content-Type: application/json",
                     "cache-control: no-cache",

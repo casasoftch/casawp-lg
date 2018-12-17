@@ -456,7 +456,7 @@
                                         echo apply_filters('clg_render_primary_back_button', $html);
                                     ?>
                                     <?php 
-                                        $html = ' <button class="btn btn-primary" type="submit">
+                                        $html = ' <button class="btn btn-primary" type="submit" disabled="disabled" style="display: none;">
                                                    Senden
                                                 </button>';
                                         echo apply_filters('clg_render_primary_submit_button', $html);
