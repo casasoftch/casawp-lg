@@ -84,8 +84,8 @@ class render extends Feature {
         $template = $this->get_template();
         
         $formData =  $this->getFormData();
-        //	die(print_r($formData));
-
+        //  die(print_r($formData));
+        
         $msg = '';
         $state = '';
         $messages = array();
@@ -514,7 +514,7 @@ class render extends Feature {
         curl_setopt_array(
             $curl, 
             [
-                CURLOPT_URL => $testUrl,
+                CURLOPT_URL => $liveUrl,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -556,13 +556,21 @@ class render extends Feature {
         $z = $this->Salt;
         $curl = curl_init();
         $hash = base64_encode(hash('sha512', $x.$t.$z, true));
-        $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/verifyCaptcha";
+        $testUrl = "https://testapi.iazi.ch/api/hedolight/v1/verifyCaptcha";
+        $liveUrl = "https://api.iazi.ch/api/hedolight/v1/verifyCaptcha";
         $query = '?response='.$captchaResponse;
 
+        //die($query);
+        if ($this->get_option("iazikey_url")) {
+            $thisUrl = $this->get_option("iazikey_url");
+        } else {
+            $thisUrl = get_site_url();
+        }
+        //die($x);
         curl_setopt_array(
             $curl, 
             [
-                CURLOPT_URL => $testUrl.$query,
+                CURLOPT_URL => $liveUrl.$query,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -570,7 +578,7 @@ class render extends Feature {
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 // CURLOPT_POSTFIELDS => $body,
-                CURLOPT_REFERER => 'http://hypoimmo.local',
+                CURLOPT_REFERER => $thisUrl,
                 CURLOPT_HTTPHEADER => [
                     "cache-control: no-cache",
                     "t: $t",
@@ -582,13 +590,15 @@ class render extends Feature {
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
+       // die($response);
         curl_close($curl);
 
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
             $decodedResponse = json_decode($response, true);
+     /*       print_r($decodedResponse);
+            die();*/
             if ($decodedResponse['success']) {
                 return 'success';
             } else {

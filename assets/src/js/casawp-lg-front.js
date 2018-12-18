@@ -3,6 +3,28 @@ function verifyCaptcha(event) {
 	jQuery('button[type=submit]').removeAttr('disabled').removeAttr('style');
 }
 
+if (typeof prevSlide === "undefined") {
+	function prevSlide(currentSlide){
+		$(currentSlide).removeClass('active');
+		$(currentSlide).prev().addClass('active').removeClass('old');
+		
+		maxHeight = $('.casawp-lg_slide.active').outerHeight();
+
+		$('#clgFormAnchor').outerHeight(maxHeight);
+	}
+}
+
+if (typeof nextSlide === "undefined") {
+	function nextSlide(currentSlide){
+		$(currentSlide).removeClass('active').addClass('old');
+		$(currentSlide).next().addClass('active');
+		
+		maxHeight = $('.casawp-lg_slide.active').outerHeight();
+
+		$('#clgFormAnchor').outerHeight(maxHeight);
+	}
+}
+
 jQuery( function () {
 	"use strict";
 
@@ -42,23 +64,7 @@ jQuery( function () {
 			return false;
 		});
 
-		function prevSlide(currentSlide){
-			$(currentSlide).removeClass('active');
-			$(currentSlide).prev().addClass('active').removeClass('old');
-			
-			maxHeight = $('.casawp-lg_slide.active').outerHeight();
-
-			$('#clgFormAnchor').outerHeight(maxHeight);
-		}
-
-		function nextSlide(currentSlide){
-			$(currentSlide).removeClass('active').addClass('old');
-			$(currentSlide).next().addClass('active');
-			
-			maxHeight = $('.casawp-lg_slide.active').outerHeight();
-
-			$('#clgFormAnchor').outerHeight(maxHeight);
-		}
+		
 
 		$('input[type="range"]').rangeslider({
 		    polyfill : false,
