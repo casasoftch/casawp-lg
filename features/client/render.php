@@ -112,45 +112,41 @@ class render extends Feature {
 
                     $validCaptcha = null;
                     // print_r($formData);
-                    if (isset($formData['captcha_response'])) {
-                        $validCaptcha = $this->verifyIaziCaptcha($formData['captcha_response']);
-                    }
-                    if ($validCaptcha &&  $validCaptcha === 'success') {
-                        $preparedData = $this->prepareData($formData);
-                        if ($this->LicenseKey) { // needs the option what to send
-                            $iaziEvaluationResponse = $this->sendIAZIEvaluation($preparedData);
-                            // print_r($iaziEvaluationResponse);
-                            // die();
-                            if ($iaziEvaluationResponse == 'success') {
-                                do_action('clg_after_inquirysend', $formData);
-            
-                                //empty form
-                                $formData = $this->getFormData(true);
-                            } else {
-                                echo ('There was an error with sending the Mail');
-                                print_r($iaziEvaluationResponse);
-                            }
-                        } else {
-                            $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
-                            if ($casamail_msgs) {
-                                $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
-                                $state = 'danger';
-                            }
-                            
-                            do_action('clg_after_inquirysend', $formData);
-    
-                            //empty form
-                            $formData = $this->getFormData(true);
+                    if ($this->LicenseKey) { // needs the option what to send
+                        if (isset($formData['captcha_response'])) {
+                            $validCaptcha = $this->verifyIaziCaptcha($formData['captcha_response']);
                         }
-    
+                        if ($validCaptcha &&  $validCaptcha === 'success') {
+                            $preparedData = $this->prepareData($formData);
+                           
+                                $iaziEvaluationResponse = $this->sendIAZIEvaluation($preparedData);
+                                // print_r($iaziEvaluationResponse);
+                                // die();
+                                if ($iaziEvaluationResponse == 'success') {
+                                    do_action('clg_after_inquirysend', $formData);
                         
+                                    //empty form
+                                    $formData = $this->getFormData(true);
+                                } else {
+                                    echo ('There was an error with sending the Mail');
+                                    print_r($iaziEvaluationResponse);
+                                }
+                           
+                        } else {
+                            print('There was an error with captcha');
+                        }
                     } else {
-                        print('There was an error with captcha');
-                    }
-
+                        $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
+                        if ($casamail_msgs) {
+                            $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
+                            $state = 'danger';
+                        }
+                        
+                        do_action('clg_after_inquirysend', $formData);
                     
-
-
+                        //empty form
+                        $formData = $this->getFormData(true);
+                    }
                 }
             } else {
                 $msg = __('Please check the following and try again:', 'casawplg');
