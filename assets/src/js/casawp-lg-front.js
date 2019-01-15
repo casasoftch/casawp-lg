@@ -136,6 +136,7 @@ jQuery( function () {
 	          // For each place, get the icon, name and location.
 	          var bounds = new google.maps.LatLngBounds();
 						var country = '';
+						var locality = '';
 	          places.forEach(function(place) {
 	            if (!place.geometry) {
 	              console.log("Returned place contains no geometry");
@@ -153,6 +154,18 @@ jQuery( function () {
 	          	document.getElementById('cityName').value = place.name;
               document.getElementById('cityLat').value = place.geometry.location.lat();
               document.getElementById('cityLng').value = place.geometry.location.lng();
+
+              if ($('#cityLocality').length) {
+              	if (place.address_components) {
+              		var localityItem = place.address_components.find(function(item) {
+              			return item.types.indexOf('locality') !== -1;
+              		});
+              		if (localityItem) {
+              			locality = localityItem.short_name ? localityItem.short_name : '';
+              		}
+              	}
+              	document.getElementById('cityLocality').value = locality;
+              }
               
               $('#pac-input').css('border-color', 'transparent');
 
