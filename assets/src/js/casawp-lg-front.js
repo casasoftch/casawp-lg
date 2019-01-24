@@ -137,6 +137,7 @@ jQuery( function () {
 	          var bounds = new google.maps.LatLngBounds();
 						var country = '';
 						var locality = '';
+						var postalCode = '';
 	          places.forEach(function(place) {
 	            if (!place.geometry) {
 	              console.log("Returned place contains no geometry");
@@ -155,7 +156,7 @@ jQuery( function () {
               document.getElementById('cityLat').value = place.geometry.location.lat();
               document.getElementById('cityLng').value = place.geometry.location.lng();
 
-              if ($('#cityLocality').length) {
+              if ($('#cityLocality').length && $('#cityPostalCode').length) {
               	if (place.address_components) {
               		var localityItem = place.address_components.find(function(item) {
               			return item.types.indexOf('locality') !== -1;
@@ -163,8 +164,15 @@ jQuery( function () {
               		if (localityItem) {
               			locality = localityItem.short_name ? localityItem.short_name : '';
               		}
+              		var postalItem = place.address_components.find(function(item) {
+              			return item.types.indexOf('postal_code') !== -1;
+              		});
+              		if (postalItem) {
+              			postalCode = postalItem.short_name ? postalItem.short_name : '';
+              		}
               	}
               	document.getElementById('cityLocality').value = locality;
+              	document.getElementById('cityPostalCode').value = postalCode;
               }
               
               $('#pac-input').css('border-color', 'transparent');
