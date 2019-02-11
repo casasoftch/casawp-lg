@@ -484,7 +484,7 @@
                                             
                                         </div>
                                         <div class="col-lg-4">
-                                            <div class="casawp-lg_counter">
+                                            <div class="casawp-lg_counter casawp-lg_counter__last">
                                                 <div>
                                                     <span class="casawp-lg_number bg-primary">
                                                         1
