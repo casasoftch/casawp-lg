@@ -5,23 +5,23 @@ function verifyCaptcha(event) {
 
 if (typeof prevSlide === "undefined") {
 	function prevSlide(currentSlide){
-		$(currentSlide).removeClass('active');
-		$(currentSlide).prev().addClass('active').removeClass('old');
+		jQuery(currentSlide).removeClass('active');
+		jQuery(currentSlide).prev().addClass('active').removeClass('old');
 		
-		maxHeight = $('.casawp-lg_slide.active').outerHeight();
+		maxHeight = jQuery('.casawp-lg_slide.active').outerHeight();
 
-		$('#clgFormAnchor').outerHeight(maxHeight);
+		jQuery('#clgFormAnchor').outerHeight(maxHeight);
 	}
 }
 
 if (typeof nextSlide === "undefined") {
 	function nextSlide(currentSlide){
-		$(currentSlide).removeClass('active').addClass('old');
-		$(currentSlide).next().addClass('active');
+		jQuery(currentSlide).removeClass('active').addClass('old');
+		jQuery(currentSlide).next().addClass('active');
 		
-		maxHeight = $('.casawp-lg_slide.active').outerHeight();
+		maxHeight = jQuery('.casawp-lg_slide.active').outerHeight();
 
-		$('#clgFormAnchor').outerHeight(maxHeight);
+		jQuery('#clgFormAnchor').outerHeight(maxHeight);
 	}
 }
 
