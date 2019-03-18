@@ -42,7 +42,7 @@ class render extends Feature {
     function registerScriptsAndStyles() {
         $lang = substr(get_bloginfo('language'), 0, 2);
 
-        wp_enqueue_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOPYZoLRaPFSg5JVwr7Le06qPpWd5jCU8&libraries=places', array(), false, true );
+        wp_enqueue_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOPYZoLRaPFSg5JVwr7Le06qPpWd5jCU8&libraries=places&language='.$lang, array(), false, true );
         wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js?hl='.$lang, array(), false, true );
     }
 
