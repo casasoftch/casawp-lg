@@ -9,8 +9,8 @@
                         <div class="col-lg-12">
                             <div class="casawp-lg_slideinner first_slide">
                                 <?php 
-                                    $html = '<h2>Kostenlose Marktpreiseinschätzung Ihrer Immobilie</h2>
-                                               <p>Die Bewertung Ihrer Immobilie ist kostenlos und dauert nur einige Minuten.</p>';
+                                    $html = '<h2>' . __('Free valuation of your property', 'casawplg') . '</h2>
+                                               <p>' . __('The valuation of your property is free of charge and only takes a few minutes.', 'casawplg') . '</p>';
                                     echo apply_filters('clg_render_contentpart_one', $html);
                                 ?>
                                 <?php 
@@ -87,7 +87,7 @@
                                 <?php 
                                     $html = '<div class="casawp-lg_buttons center_buttons">
                                                 <a href="#" class="btn btn-primary btn-forward">
-                                                    Loslegen
+                                                    ' . __('Getting started', 'casawplg') . '
                                                 </a>
                                             </div>';
                                     echo apply_filters('clg_render_primary_start_button', $html);
@@ -118,7 +118,7 @@
                                                                         </g>
                                                                     </g>
                                                                 </g>
-                                                            </svg> Informationen zum Standort.
+                                                            </svg> ' . __('Information about the location.', 'casawplg') . '
                                                         </h2>';
                                                 echo apply_filters('clg_render_contentpart_two', $html);
                                             ?>
@@ -152,9 +152,9 @@
                                 <?php 
                                     $html = '<div class="casawp-lg_mapwrapper">
                                                 <div class="casawp-lg_searchboxwrapper" id="pac-card">
-                                                    <h3>'.__('Where is the property located?', 'casawplg').'</h3>
+                                                    <h3>'.__('Where is your property located?', 'casawplg').'</h3>
                                                     <div class="casawp-lg_searchboxinput">
-                                                        <input id="pac-input" required class="controls" type="text" placeholder="Adresse, Ort, PLZ">
+                                                        <input id="pac-input" required class="controls" type="text" placeholder="'.__('Address, city, zip code', 'casawplg').'">
                                                     </div>
                                                 </div>
                                                 <div id="casawp-lg_map"></div>
@@ -168,13 +168,13 @@
                                 <div class="casawp-lg_buttons multi_buttons">
                                     <?php 
                                         $html = '<a href="#" class="btn btn-primary btn-backward">
-                                                    Zurück
+                                                    '.__('Back', 'casawplg').'
                                                 </a>';
                                         echo apply_filters('clg_render_primary_back_button', $html);
                                     ?>
                                     <?php 
                                         $html = '<a href="#" class="btn btn-primary btn-forward">
-                                                    Weiter
+                                                    '.__('Next', 'casawplg').'
                                                 </a>';
                                         echo apply_filters('clg_render_primary_forward_button', $html);
                                     ?>
@@ -205,7 +205,7 @@
                                                                     </g>
                                                                 </g>
                                                             </g>
-                                                        </svg> Informationen zu Ihrer Immobilie.
+                                                        </svg> '.__('Information about your property.', 'casawplg').'
                                                     </h2>';
                                                 echo apply_filters('clg_render_contentpart_three', $html);
                                             ?>
@@ -242,7 +242,7 @@
                                                     <label class="casawp-lg_spanlabel control-label">'.__('Property type', 'casawplg').'</label>
                                                     <div class="casawp-lg_togglebox">
                                                         <input type="radio" class="casawp-lg_togglebox__switchinput" name="extra_data[propertyType]" value="single-family-house" id="casawplgHouse" checked>
-                                                        <label for="casawplgHouse" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off control-label">'.__('Single-family house', 'casawplg').'</label>
+                                                        <label for="casawplgHouse" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off control-label">'.__('Single family house', 'casawplg').'</label>
                                                         <input type="radio" class="casawp-lg_togglebox__switchinput" name="extra_data[propertyType]" value="flat" id="casawplgApartment">
                                                         <label for="casawplgApartment" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on control-label">'.__('Condominium', 'casawplg').'</label>
                                                         <span class="casawp-lg_togglebox__switchselection"></span>
@@ -254,7 +254,7 @@
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="casawp-lg_range">
-                                                    <label class="control-label">'.__('Net living area', 'casawplg').' (m<sup>2</sup>)</label>
+                                                    <label class="control-label">'.__('Net living space', 'casawplg').' (m<sup>2</sup>)</label>
                                                     <input type="range" min="1" max="300" step="1" value="100" name="extra_data[areaNwf]" data-rangeslider>
                                                     <div class="clearfix"></div>
                                                 </div>
@@ -269,7 +269,7 @@
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="casawp-lg_range">
-                                                    <label class="control-label">'.__('Building year', 'casawplg').'</label>
+                                                    <label class="control-label">'.__('Year of construction', 'casawplg').'</label>
                                                     <input type="range" min="' . (date("Y") - 100) . '" max="' . (date("Y") + 4) . '" step="1" value="' . (date("Y") - 20) . '" name="extra_data[yearBuilt]" data-rangeslider>
                                                     <div class="clearfix"></div>
                                                 </div>
@@ -279,13 +279,13 @@
                                 <div class="casawp-lg_buttons multi_buttons">
                                     <?php 
                                         $html = '<a href="#" class="btn btn-primary btn-backward">
-                                                    Zurück
+                                                    '.__('Back', 'casawplg').'
                                                 </a>';
                                         echo apply_filters('clg_render_primary_back_button', $html);
                                     ?>
                                     <?php 
                                         $html = '<a href="#" class="btn btn-primary btn-forward">
-                                                    Weiter
+                                                    '.__('Next', 'casawplg').'
                                                 </a>';
                                         echo apply_filters('clg_render_primary_forward_button', $html);
                                     ?>
@@ -315,7 +315,7 @@
                                                                 </g>
                                                             </g>
                                                         </g>
-                                                    </svg> Informationen zu Ihrer Person.
+                                                    </svg> '.__('Personal information.', 'casawplg').'
                                                 </h2>';
 
                                                 echo apply_filters('clg_render_contentpart_four', $html);
@@ -402,7 +402,7 @@
                                                                         name="extra_data[sell]"
                                                                         value="Ja"
                                                                     />
-                                                                    <label class="control-label" for="choice_sell">' . __('Sell', 'casawplg') . '</label>
+                                                                    <label class="control-label" for="choice_sell">' . __('To sell', 'casawplg') . '</label>
                                                                 </div>
                                                                 <div class="casawp-lg-checkboxoption">
                                                                     <input
@@ -412,7 +412,7 @@
                                                                         name="extra_data[buy]"
                                                                         value="Ja"
                                                                     />
-                                                                    <label class="control-label" for="choice_buy">' . __('Buy', 'casawplg') . '</label>
+                                                                    <label class="control-label" for="choice_buy">' . __('To buy', 'casawplg') . '</label>
                                                                 </div>
                                                                 <div class="casawp-lg-checkboxoption">
                                                                     <input
@@ -422,7 +422,7 @@
                                                                         name="extra_data[financing]"
                                                                         value="Ja"
                                                                     />
-                                                                    <label class="control-label" for="choice_financing">' . __('Financing', 'casawplg') . '</label>
+                                                                    <label class="control-label" for="choice_financing">' . __('To finance', 'casawplg') . '</label>
                                                                 </div>
                                                                 <div class="casawp-lg-checkboxoption">
                                                                     <input
@@ -451,13 +451,13 @@
                                 <div class="casawp-lg_buttons multi_buttons">
                                     <?php 
                                         $html = '<a href="#" class="btn btn-primary btn-backward">
-                                                    Zurück
+                                                    ' . __('Back', 'casawplg') . '
                                                 </a>';
                                         echo apply_filters('clg_render_primary_back_button', $html);
                                     ?>
                                     <?php 
                                         $html = ' <button class="btn btn-primary" type="submit" disabled="disabled" style="display: none;">
-                                                   Senden
+                                                   ' . __('Send', 'casawplg') . '
                                                 </button>';
                                         echo apply_filters('clg_render_primary_submit_button', $html);
                                     ?>
@@ -512,8 +512,8 @@
                                         <div class="col-lg-12">
                                             <div class="casawp_centerslide">
                                                 <?php 
-                                                    $html = '<h2>Die Bewertung wurde erfolgreich abgeschlossen</h2>
-                                                               <p>Sie werden in Kürze Ihre Bewertungsinformationen per E-Mail erhalten.</p>';
+                                                    $html = '<h2>' . __('The valuation was successfully completed', 'casawplg') . '</h2>
+                                                               <p>' . __('You will shortly receive the valuation information via email.', 'casawplg') . '</p>';
                                                     echo apply_filters('clg_render_sentmessage', $html);
                                                 ?>
                                             </div>
