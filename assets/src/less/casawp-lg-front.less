@@ -11,6 +11,7 @@
 #clgFormAnchor{
 	display: flex;
 	align-items: center;
+	transition: 0.35s height;
 }
 
 .casawp-lg_buttons{
@@ -40,6 +41,7 @@
 
 .casawp-lg_slide{
 	position: absolute;
+	top: 0;
 	width: 100%;
 	transition: 0.5s all ease-in-out;
 	opacity: 0;
@@ -188,6 +190,13 @@
 			content: '';
 			display: none;
 		}
+	}
+}
+
+.casawp-lg_counter__last{
+	@media (max-width: 1199px) {
+		text-align: center;
+		margin-bottom: 30px;
 	}
 }
 

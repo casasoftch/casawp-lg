@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Starter Kit 0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 14:03+0100\n"
-"PO-Revision-Date: 2018-12-10 14:03+0100\n"
+"POT-Creation-Date: 2019-12-18 13:19+0100\n"
+"PO-Revision-Date: 2019-12-18 13:24+0100\n"
 "Last-Translator: Jens Stalder <js@casasoft.ch>\n"
 "Language-Team: aut0poietic\n"
 "Language: de_DE\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -364,7 +364,7 @@ msgstr ""
 
 #: ../assets/acf/admin/field-groups.php:616
 msgid "Getting Started"
-msgstr ""
+msgstr "Loslegen"
 
 #: ../assets/acf/admin/field-groups.php:617
 msgid "Field Types"
@@ -1910,7 +1910,7 @@ msgctxt "Date Time Picker JS pmTextShort"
 msgid "P"
 msgstr ""
 
-#: ../assets/acf/fields/email.php:36 ../assets/templates/form.php:380
+#: ../assets/acf/fields/email.php:36 ../assets/templates/form.php:381
 #: ../features/admin/inquiry_archive_cols.php:17
 #: ../features/admin/inquiry_metabox.php:161
 #: ../features/core/field_manager.php:46
@@ -2300,8 +2300,7 @@ msgstr ""
 msgid "Radio Button"
 msgstr ""
 
-#: ../assets/acf/fields/radio.php:261 ../assets/templates/form.php:431
-#: ../assets/templates/form.php:434
+#: ../assets/acf/fields/radio.php:261 ../assets/templates/form.php:435
 msgid "Other"
 msgstr "Andere"
 
@@ -3142,77 +3141,140 @@ msgstr ""
 msgid "Maximum Rows"
 msgstr ""
 
+#: ../assets/js/moment.min.js:1
+msgid ": "
+msgstr ""
+
+#: ../assets/templates/form.php:12
+msgid "Free valuation of your property"
+msgstr "Kostenlose Marktpreiseinschätzung Ihrer Immobilie"
+
+#: ../assets/templates/form.php:13
+msgid ""
+"The valuation of your property is free of charge and only takes a few "
+"minutes."
+msgstr ""
+"Die Bewertung Ihrer Immobilie ist kostenlos und dauert nur einige Minuten."
+
+#: ../assets/templates/form.php:90
+msgid "Getting started"
+msgstr "Loslegen"
+
+#: ../assets/templates/form.php:121
+msgid "Information about the location."
+msgstr "Informationen zum Standort. "
+
 #: ../assets/templates/form.php:155
-msgid "Where is the property located?"
+msgid "Where is your property located?"
 msgstr "Wo befindet sich Ihre Immobilie?"
 
-#: ../assets/templates/form.php:241
+#: ../assets/templates/form.php:157
+msgid "Address, city, zip code"
+msgstr "Adresse, Ort, PLZ"
+
+#: ../assets/templates/form.php:171 ../assets/templates/form.php:282
+#: ../assets/templates/form.php:454
+msgid "Back"
+msgstr "Zurück"
+
+#: ../assets/templates/form.php:177 ../assets/templates/form.php:288
+msgid "Next"
+msgstr "Weiter"
+
+#: ../assets/templates/form.php:208
+msgid "Information about your property."
+msgstr "Informationen zu Ihrer Immobilie. "
+
+#: ../assets/templates/form.php:242
 msgid "Property type"
 msgstr "Objektart"
 
-#: ../assets/templates/form.php:244
-msgid "Single-family house"
+#: ../assets/templates/form.php:245
+msgid "Single family house"
 msgstr "Einfamilienhaus"
 
-#: ../assets/templates/form.php:246
+#: ../assets/templates/form.php:247
 msgid "Condominium"
 msgstr "Eigentumswohnung"
 
-#: ../assets/templates/form.php:251
+#: ../assets/templates/form.php:252
 msgid "Property surface"
 msgstr "Grundstücksfläche"
 
-#: ../assets/templates/form.php:256
-msgid "Net living area"
+#: ../assets/templates/form.php:257
+msgid "Net living space"
 msgstr "Nettowohnfläche"
 
-#: ../assets/templates/form.php:261
+#: ../assets/templates/form.php:262
 msgid "Number of rooms"
 msgstr "Anzahl Zimmer"
 
-#: ../assets/templates/form.php:266
+#: ../assets/templates/form.php:267
 msgid "Number of bathrooms"
 msgstr "Anzahl Badezimmer"
 
-#: ../assets/templates/form.php:271
-msgid "Building year"
+#: ../assets/templates/form.php:272
+msgid "Year of construction"
 msgstr "Baujahr"
 
-#: ../assets/templates/form.php:353 ../features/admin/inquiry_metabox.php:133
+#: ../assets/templates/form.php:318
+msgid "Personal information."
+msgstr "Informationen zu Ihrer Person. "
+
+#: ../assets/templates/form.php:354 ../features/admin/inquiry_metabox.php:133
 msgid "Salutation"
 msgstr "Anrede"
 
-#: ../assets/templates/form.php:366 ../features/admin/inquiry_metabox.php:142
+#: ../assets/templates/form.php:357
+msgid "Ms."
+msgstr "Frau"
+
+#: ../assets/templates/form.php:359
+msgid "Mr."
+msgstr "Herr"
+
+#: ../assets/templates/form.php:367 ../features/admin/inquiry_metabox.php:142
 #: ../features/core/field_manager.php:34
 msgid "First name"
 msgstr "Vorname"
 
-#: ../assets/templates/form.php:372 ../features/admin/inquiry_metabox.php:151
+#: ../assets/templates/form.php:373 ../features/admin/inquiry_metabox.php:151
 #: ../features/core/field_manager.php:38
 msgid "Last name"
 msgstr "Nachname"
 
-#: ../assets/templates/form.php:386 ../features/admin/inquiry_metabox.php:170
+#: ../assets/templates/form.php:387 ../features/admin/inquiry_metabox.php:170
 #: ../features/core/field_manager.php:42
 msgid "Mobile"
-msgstr ""
+msgstr "Mobile"
 
-#: ../assets/templates/form.php:394
+#: ../assets/templates/form.php:395
 msgid "Estimation reason"
 msgstr "Bewertungsgrund"
 
-#: ../assets/templates/form.php:401 ../assets/templates/form.php:404
-msgid "Sell"
+#: ../assets/templates/form.php:405
+msgid "To sell"
 msgstr "Verkaufen"
 
-#: ../assets/templates/form.php:411 ../assets/templates/form.php:414
-#: ../features/admin/unit_metabox.php:344
-msgid "Buy"
+#: ../assets/templates/form.php:415
+msgid "To buy"
 msgstr "Kaufen"
 
-#: ../assets/templates/form.php:421 ../assets/templates/form.php:424
-msgid "Financing"
+#: ../assets/templates/form.php:425
+msgid "To finance"
 msgstr "Finanzieren"
+
+#: ../assets/templates/form.php:460
+msgid "Send"
+msgstr "Senden"
+
+#: ../assets/templates/form.php:515
+msgid "The valuation was successfully completed"
+msgstr "Die Bewertung wurde erfolgreich abgeschlossen"
+
+#: ../assets/templates/form.php:516
+msgid "You will shortly receive the valuation information via email."
+msgstr "Sie werden in Kürze Ihre Bewertungsinformationen per E-Mail erhalten."
 
 #: ../features/admin/building_metabox.php:80
 msgid "Visible"
@@ -3228,21 +3290,31 @@ msgstr "Haupteinstellungen"
 
 #: ../features/admin/general_options.php:104
 msgid ""
-"<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> direkte E-"
-"Mail"
+"<strong>IAZI</strong><span style=\"font-weight:100\">evaluation</span> URL"
 msgstr ""
 
 #: ../features/admin/general_options.php:112
 msgid ""
-"<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> Provider ID"
+"<strong>IAZI</strong><span style=\"font-weight:100\">evaluation</span> Key"
 msgstr ""
 
 #: ../features/admin/general_options.php:120
 msgid ""
+"<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> direkte E-"
+"Mail"
+msgstr ""
+
+#: ../features/admin/general_options.php:128
+msgid ""
+"<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> Provider ID"
+msgstr ""
+
+#: ../features/admin/general_options.php:136
+msgid ""
 "<strong>CASA</strong><span style=\"font-weight:100\">MAIL</span> Publisher ID"
 msgstr ""
 
-#: ../features/admin/general_options.php:176
+#: ../features/admin/general_options.php:200
 msgid "Enter your settings below:"
 msgstr "Tragen Sie Einstellungen unten ein:"
 
@@ -3382,6 +3454,10 @@ msgstr "Terrassenfläche"
 msgid "Balcony Space"
 msgstr "Balkonfläche"
 
+#: ../features/admin/unit_metabox.php:344
+msgid "Buy"
+msgstr "Kaufen"
+
 #: ../features/admin/unit_metabox.php:348
 msgid "Currency"
 msgstr "Währung"
@@ -3429,55 +3505,55 @@ msgstr "Nebenkosten"
 msgid "Custom %d"
 msgstr ""
 
-#: ../features/client/render.php:10
+#: ../features/client/render.php:17
 msgid "First name is required"
 msgstr "Vorname ist benötigt"
 
-#: ../features/client/render.php:11
+#: ../features/client/render.php:18
 msgid "Last name is required"
 msgstr "Nachname ist benötigt"
 
-#: ../features/client/render.php:12
+#: ../features/client/render.php:19
 msgid "The company is required"
 msgstr "Firma wird benötigt"
 
-#: ../features/client/render.php:13
+#: ../features/client/render.php:20
 msgid "Email is not valid"
 msgstr "E-Mail ist nicht korrekt"
 
-#: ../features/client/render.php:14
+#: ../features/client/render.php:21
 msgid "A phone number is required"
 msgstr "Eine Telefonnummer ist benötigt"
 
-#: ../features/client/render.php:15
+#: ../features/client/render.php:22
 msgid "A street address is required"
 msgstr "Eine Strasse ist benötigt"
 
-#: ../features/client/render.php:16
+#: ../features/client/render.php:23
 msgid "ZIP is required"
 msgstr "PLZ ist benötigt"
 
-#: ../features/client/render.php:17
+#: ../features/client/render.php:24
 msgid "City is required"
 msgstr "Ort ist benötigt"
 
-#: ../features/client/render.php:18
+#: ../features/client/render.php:25
 msgid "Message is required"
 msgstr "Nachricht wird benötigt"
 
-#: ../features/client/render.php:19
+#: ../features/client/render.php:26
 msgid "Ivalid post"
 msgstr "Falsche Absendung"
 
-#: ../features/client/render.php:21
+#: ../features/client/render.php:28
 msgid "Please choose a unit"
 msgstr "Bitte wählen Sie ein Objekt"
 
-#: ../features/client/render.php:78
+#: ../features/client/render.php:95
 msgid "Inquiry has been sent. Thank you!"
 msgstr "Ihre Anfrage wurde versendet. Besten Dank!"
 
-#: ../features/client/render.php:108
+#: ../features/client/render.php:152
 msgid "Please check the following and try again:"
 msgstr "Bitte überprüfen Sie folgendes und versuchen Sie es erneut:"
 
@@ -3550,14 +3626,17 @@ msgstr "Keine Anfragen im Papierkorb gefunden."
 msgid "Silence is golden... or at least isn't completely annoying."
 msgstr ""
 
+#~ msgid "Building year"
+#~ msgstr "Baujahr"
+
+#~ msgid "Sell"
+#~ msgstr "Verkaufen"
+
+#~ msgid "Financing"
+#~ msgstr "Finanzieren"
+
 #~ msgid "I am interested in"
 #~ msgstr "Ich interessiere mich für"
-
-#~ msgid "Mrs."
-#~ msgstr "Frau"
-
-#~ msgid "Mr."
-#~ msgstr "Herr"
 
 #~ msgid "Phone"
 #~ msgstr "Telefon"
@@ -3570,9 +3649,6 @@ msgstr ""
 
 #~ msgid "Please fill in all the required fields"
 #~ msgstr "Bitte alle Pflichtfelder ausfüllen"
-
-#~ msgid "Send"
-#~ msgstr "Senden"
 
 #~ msgid "Surface"
 #~ msgstr "Fläche"

@@ -1,3 +1,30 @@
+function verifyCaptcha(event) {
+	console.log(event);
+	jQuery('button[type=submit]').removeAttr('disabled').removeAttr('style');
+}
+
+if (typeof prevSlide === "undefined") {
+	function prevSlide(currentSlide){
+		jQuery(currentSlide).removeClass('active');
+		jQuery(currentSlide).prev().addClass('active').removeClass('old');
+		
+		maxHeight = jQuery('.casawp-lg_slide.active').outerHeight();
+
+		jQuery('#clgFormAnchor').outerHeight(maxHeight);
+	}
+}
+
+if (typeof nextSlide === "undefined") {
+	function nextSlide(currentSlide){
+		jQuery(currentSlide).removeClass('active').addClass('old');
+		jQuery(currentSlide).next().addClass('active');
+		
+		maxHeight = jQuery('.casawp-lg_slide.active').outerHeight();
+
+		jQuery('#clgFormAnchor').outerHeight(maxHeight);
+	}
+}
+
 jQuery( function () {
 	"use strict";
 
@@ -5,18 +32,14 @@ jQuery( function () {
 
 		var maxHeight = -1;
 
-		$('.casawp-lg_slide').each(function() {
-		    maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
-		});
+		maxHeight = $('.casawp-lg_slide.active').outerHeight();
 
 		$('#clgFormAnchor').outerHeight(maxHeight);
 
 		$(window).resize(function(){
-			$('.casawp-lg_slide').each(function() {
-			    maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
-			});
+			maxHeight = $('.casawp-lg_slide.active').outerHeight();
 
-			$('.casawp-lg-wrapper_inner').outerHeight(maxHeight);
+			$('#clgFormAnchor').outerHeight(maxHeight);
 		})
 
 		$('.btn-forward').click(function(e){
@@ -41,15 +64,7 @@ jQuery( function () {
 			return false;
 		});
 
-		function prevSlide(currentSlide){
-			$(currentSlide).removeClass('active');
-			$(currentSlide).prev().addClass('active').removeClass('old');
-		}
-
-		function nextSlide(currentSlide){
-			$(currentSlide).removeClass('active').addClass('old');
-			$(currentSlide).next().addClass('active');
-		}
+		
 
 		$('input[type="range"]').rangeslider({
 		    polyfill : false,
@@ -61,13 +76,13 @@ jQuery( function () {
 		    }
 		});
 
-		if ($('input[name="extra_data[Objektart]"]:checked').val() == 'Einfamilienhaus') {
+		if ($('input[name="extra_data[propertyType]"]:checked').val() == 'single-family-house') {
 			$('#casawp-lg-property-surface').parent().show();
 			$('#casawp-lg-bathroom').parent().hide();
 		}
 
-		$('input[type="radio"][name="extra_data[Objektart]"]').change(function(){
-			if ($('input[name="extra_data[Objektart]"]:checked').val() == 'Einfamilienhaus') {
+		$('input[type="radio"][name="extra_data[propertyType]"]').change(function(){
+			if ($('input[name="extra_data[propertyType]"]:checked').val() == 'single-family-house') {
 				$('#casawp-lg-property-surface').parent().show();
 				$('#casawp-lg-bathroom').parent().hide();
 			} else {
@@ -75,7 +90,6 @@ jQuery( function () {
 				$('#casawp-lg-bathroom').parent().show();
 			}
 		});
-
 
 		function initAutocomplete() {
 	        var map = new google.maps.Map(document.getElementById('casawp-lg_map'), {
@@ -94,7 +108,14 @@ jQuery( function () {
 	        // Bias the SearchBox results towards current map's viewport.
 	        map.addListener('bounds_changed', function() {
 	          searchBox.setBounds(map.getBounds());
-	        });
+					});
+					
+					google.maps.event.addDomListener(input, 'keydown', function(event) {
+						if (event.keyCode === 13) {
+							// ENTER
+							event.preventDefault();
+						} 
+					});
 
 	        var markers = [];
 	        // Listen for the event fired when the user selects a prediction and retrieve
@@ -102,7 +123,7 @@ jQuery( function () {
 	        searchBox.addListener('places_changed', function() {
 	          var places = searchBox.getPlaces();
 
-	          if (places.length == 0) {
+						if (places.length == 0) {
 	            return;
 	          }
 
@@ -114,15 +135,45 @@ jQuery( function () {
 
 	          // For each place, get the icon, name and location.
 	          var bounds = new google.maps.LatLngBounds();
+						var country = '';
+						var locality = '';
+						var postalCode = '';
 	          places.forEach(function(place) {
 	            if (!place.geometry) {
 	              console.log("Returned place contains no geometry");
 	              return;
-	            }
-
-	          document.getElementById('cityName').value = place.name;
+							}
+							if (place.address_components) {
+								var countryItem = place.address_components.find(function(item) {
+									return item.types.indexOf('country') !== -1;
+								});
+								if (countryItem) {
+									country = countryItem.short_name ? countryItem.short_name : '';
+								}
+							}
+							document.getElementById('countryName').value = country;
+	          	document.getElementById('cityName').value = place.name;
               document.getElementById('cityLat').value = place.geometry.location.lat();
               document.getElementById('cityLng').value = place.geometry.location.lng();
+
+              if ($('#cityLocality').length && $('#cityPostalCode').length) {
+              	if (place.address_components) {
+              		var localityItem = place.address_components.find(function(item) {
+              			return item.types.indexOf('locality') !== -1;
+              		});
+              		if (localityItem) {
+              			locality = localityItem.short_name ? localityItem.short_name : '';
+              		}
+              		var postalItem = place.address_components.find(function(item) {
+              			return item.types.indexOf('postal_code') !== -1;
+              		});
+              		if (postalItem) {
+              			postalCode = postalItem.short_name ? postalItem.short_name : '';
+              		}
+              	}
+              	document.getElementById('cityLocality').value = locality;
+              	document.getElementById('cityPostalCode').value = postalCode;
+              }
               
               $('#pac-input').css('border-color', 'transparent');
 
