@@ -407,6 +407,7 @@ class render extends Feature {
             "countryCode" => ($formData['extra_data']['country'] ? $formData['extra_data']['country'] : null),
             "latitude" => ($formData['extra_data']['lat'] ? $formData['extra_data']['lat'] : 0),
             "longitude" => ($formData['extra_data']['lng'] ? $formData['extra_data']['lng'] : 0),
+            "formattedAddress" => ($formData['extra_data']['formattedAddress'] ? $formData['extra_data']['formattedAddress'] : 0),
             "surfaceLiving" => ($formData['extra_data']['areaNwf'] ? $formData['extra_data']['areaNwf'] : 0),
             "surfaceGround" => ($formData['extra_data']['areaPropertyLand'] ? $formData['extra_data']['areaPropertyLand'] : 0),
             "roomNb" => ($formData['extra_data']['numberOfRooms'] ? $formData['extra_data']['numberOfRooms'] : 0),
@@ -449,6 +450,7 @@ class render extends Feature {
         $prepareData['countryCode'] = $fullData['countryCode'];
         $prepareData['latitude'] = $fullData['latitude'];
         $prepareData['longitude'] = $fullData['longitude'];
+        $prepareData['formattedAddress'] = $fullData['formattedAddress'];
         $prepareData['surfaceLiving'] = $fullData['surfaceLiving'];
         $prepareData['sale'] = $fullData['sale'];
         $prepareData['purchase'] = $fullData['purchase'];
