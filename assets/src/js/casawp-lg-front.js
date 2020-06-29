@@ -155,6 +155,7 @@ jQuery( function () {
 	          	document.getElementById('cityName').value = place.name;
               document.getElementById('cityLat').value = place.geometry.location.lat();
               document.getElementById('cityLng').value = place.geometry.location.lng();
+              document.getElementById('formattedAddress').value = place.formatted_address;
 
               if ($('#cityLocality').length && $('#cityPostalCode').length) {
               	if (place.address_components) {

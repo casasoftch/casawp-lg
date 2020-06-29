@@ -162,6 +162,7 @@
                                                 <input required type="hidden" id="cityName" name="extra_data[locality]">
                                                 <input required type="hidden" id="cityLat" name="extra_data[lat]">
                                                 <input required type="hidden" id="cityLng" name="extra_data[lng]">
+                                                <input required type="hidden" id="formattedAddress" name="extra_data[formattedAddress]">
                                             </div>';
                                     echo apply_filters('clg_render_map', $html);
                                 ?>
