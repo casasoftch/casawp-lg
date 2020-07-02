@@ -42,8 +42,12 @@ class render extends Feature {
     function registerScriptsAndStyles() {
         $lang = substr(get_bloginfo('language'), 0, 2);
 
-        wp_enqueue_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOPYZoLRaPFSg5JVwr7Le06qPpWd5jCU8&libraries=places&language='.$lang, array(), false, true );
-        wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js?hl='.$lang, array(), false, true );
+        wp_register_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyACeY96O194ywiXvns2lLcSp15e6VcBQBg&libraries=places&language='.$lang, array(), false, true );
+        wp_register_script('recaptcha', 'https://www.google.com/recaptcha/api.js?hl='.$lang, array(), false, true );
+
+        wp_enqueue_style( 'casawp-lg-front', PLUGIN_URL . 'assets/css/casawp-lg-front.css', array(), '1', 'screen' );
+        wp_register_script( 'casawp-lg-front', PLUGIN_URL . 'assets/js/casawp-lg-front.min.js', array('jquery'), '3');
+        wp_register_script( 'moment', PLUGIN_URL . 'assets/js/moment.min.js');
     }
 
 
@@ -51,9 +55,15 @@ class render extends Feature {
         /*$a = shortcode_atts( array(
             'unit_id' => ''
         ), $atts );*/
+        
         $a = shortcode_atts( array(
             'direct_recipient_email' => false,
         ), $atts );
+
+        wp_enqueue_script('google_maps_v3');
+        wp_enqueue_script('recaptcha');
+        wp_enqueue_script('casawp-lg-front');
+        wp_enqueue_script('moment');
 
         return $this->renderForm($atts);
 

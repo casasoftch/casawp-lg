@@ -1,5 +1,5 @@
 <?php
-namespace casasoft\casawplg;
+/*namespace casasoft\casawplg;
 
 
 class styles_and_scripts_front extends Feature {
@@ -13,4 +13,4 @@ class styles_and_scripts_front extends Feature {
 
 }
 
-add_action( 'wp_enqueue_scripts', array( 'casasoft\casawplg\styles_and_scripts_front', 'init' )  );
+add_action( 'wp_enqueue_scripts', array( 'casasoft\casawplg\styles_and_scripts_front', 'init' )  );*/
