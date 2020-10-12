@@ -355,9 +355,9 @@
                                                         <label class="casawp-lg_spanlabel control-label">'.__('Salutation', 'casawplg').'</label>
                                                         <div class="casawp-lg_togglebox">
                                                             <input type="radio" class="casawp-lg_togglebox__switchinput" name="casawplg-inquiry[gender]" value="woman" id="casawp-lg-gender_woman" checked>
-                                                            <label for="casawp-lg-gender_woman" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off control-label">Frau</label>
+                                                            <label for="casawp-lg-gender_woman" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-off control-label">'.__('Ms.', 'casawplg').'</label>
                                                             <input type="radio" class="casawp-lg_togglebox__switchinput" name="casawplg-inquiry[gender]" value="man" id="casawp-lg-gender_man">
-                                                            <label for="casawp-lg-gender_man" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on control-label">Herr</label>
+                                                            <label for="casawp-lg-gender_man" class="casawp-lg_togglebox__switchlabel casawp-lg_togglebox__switchlabel-on control-label">'.__('Mr.', 'casawplg').'</label>
                                                             <span class="casawp-lg_togglebox__switchselection"></span>
                                                         </div>
                                                     </div>
