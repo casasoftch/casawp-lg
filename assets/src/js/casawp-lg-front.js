@@ -36,13 +36,13 @@ jQuery( function () {
 
 		$('#clgFormAnchor').outerHeight(maxHeight);
 
-		$(window).resize(function(){
+		$(window).on('resize', function(){
 			maxHeight = $('.casawp-lg_slide.active').outerHeight();
 
 			$('#clgFormAnchor').outerHeight(maxHeight);
 		})
 
-		$('.btn-forward').click(function(e){
+		$('.btn-forward').on('click', function(e){
 			e.preventDefault();
 			var $this = $(this).parent().parent().parent().parent().parent();
 			if ($this.find('#pac-input').length) {
@@ -57,7 +57,7 @@ jQuery( function () {
 			return false;
 		});
 
-		$('.btn-backward').click(function(e){
+		$('.btn-backward').on('click', function(e){
 			e.preventDefault();
 			var $this = $(this).parent().parent().parent().parent().parent();
 			prevSlide($this);

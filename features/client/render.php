@@ -46,7 +46,7 @@ class render extends Feature {
         wp_register_script('recaptcha', 'https://www.google.com/recaptcha/api.js?hl='.$lang, array(), false, true );
 
         wp_enqueue_style( 'casawp-lg-front', PLUGIN_URL . 'assets/css/casawp-lg-front.css', array(), '1', 'screen' );
-        wp_register_script( 'casawp-lg-front', PLUGIN_URL . 'assets/js/casawp-lg-front.min.js', array('jquery'), '3');
+        wp_register_script( 'casawp-lg-front', PLUGIN_URL . 'assets/js/casawp-lg-front.min.js', array('jquery'), '4');
         wp_register_script( 'moment', PLUGIN_URL . 'assets/js/moment.min.js');
     }
 
