@@ -3,6 +3,41 @@ function verifyCaptcha(event) {
 	jQuery('button[type=submit]').removeAttr('disabled').removeAttr('style');
 }
 
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+	  e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+	for (var i = keys.length; i--;) {
+		if (e.keyCode === keys[i]) {
+			preventDefault(e);
+			return;
+		}
+	}
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+	  window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+	if (window.removeEventListener) {
+		window.removeEventListener('DOMMouseScroll', wheel, false);
+	}
+	window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}	
+
 if (typeof prevSlide === "undefined") {
 	function prevSlide(currentSlide){
 		jQuery(currentSlide).removeClass('active');
@@ -11,6 +46,13 @@ if (typeof prevSlide === "undefined") {
 		maxHeight = jQuery('.casawp-lg_slide.active').outerHeight();
 
 		jQuery('#clgFormAnchor').outerHeight(maxHeight);
+
+		disable_scroll();
+		jQuery('html, body').stop().animate({
+			scrollTop: jQuery('#clgFormAnchor').offset().top - jQuery('#header').outerHeight()
+		}, 700, function () {
+			enable_scroll();
+		});
 	}
 }
 
@@ -22,6 +64,13 @@ if (typeof nextSlide === "undefined") {
 		maxHeight = jQuery('.casawp-lg_slide.active').outerHeight();
 
 		jQuery('#clgFormAnchor').outerHeight(maxHeight);
+
+		disable_scroll();
+		jQuery('html, body').stop().animate({
+			scrollTop: jQuery('#clgFormAnchor').offset().top - jQuery('#header').outerHeight()
+		}, 700, function () {
+			enable_scroll();
+		});
 	}
 }
 
