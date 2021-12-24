@@ -14,7 +14,7 @@ function get_clg($object_id = false, $key = false, $label = false, $type = false
 	}
 
 	if ($type == 'casawplg_inquiry') {
-		return $fm->getInquiryField($post, $key, $label);
+		return $fm->getInquiryField($key, $post, $label);
 	}
 	return '';
 }

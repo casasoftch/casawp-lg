@@ -69,7 +69,7 @@ class field_manager extends Feature {
 		return false;
 	}
 
-	public function getInquiryField($inquiry = false, $key, $label = false){
+	public function getInquiryField($key, $inquiry = false, $label = false){
 		$item = $this->getInquiryItem($inquiry, $key);
 		if ($item) {
 			if ($label) {

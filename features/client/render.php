@@ -146,7 +146,7 @@ class render extends Feature {
                             print('There was an error with captcha');
                         }
                     } else {
-                        $casamail_msgs = $this->sendCasamail(false, false, $inquiry, $formData);
+                        $casamail_msgs = $this->sendCasamail($inquiry, $formData, false, false);
                         if ($casamail_msgs) {
                             $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
                             $state = 'danger';
@@ -298,7 +298,7 @@ class render extends Feature {
     }
 
 
-    public function sendCasamail($provider = false, $publisher = false, $inquiry, $formData) {
+    public function sendCasamail($inquiry, $formData, $provider = false, $publisher = false) {
         if (! $provider) {
             $provider = $this->get_option("provider_slug");
         }
