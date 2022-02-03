@@ -506,8 +506,8 @@ class render extends Feature {
         // print_r($requestData);
         $body = json_encode([$requestData], true);
 
-        $testUrl = "https://testservices.iazi.ch/api/hedolight/v1/evaluationResult";
-        $liveUrl = "https://api.iazi.ch/api/hedolight/v1/evaluationResult";
+        $testUrl = "https://test.iazi.ch/api/apphedolight/v1/evaluationresult";
+        $liveUrl = "https://prod.iazi.ch/api/apphedolight/v1/evaluationresult";
 
         $x = $this->LicenseKey;
         $t = time();
@@ -564,7 +564,7 @@ class render extends Feature {
         $z = $this->Salt;
         $curl = curl_init();
         $hash = base64_encode(hash('sha512', $x.$t.$z, true));
-        $testUrl = "https://testapi.iazi.ch/api/hedolight/v1/verifyCaptcha";
+        $testUrl = "https://test.iazi.ch/api/apphedolight/v1/verifycaptcha";
         $liveUrl = "https://api.iazi.ch/api/hedolight/v1/verifyCaptcha";
         $query = '?response='.$captchaResponse;
 
