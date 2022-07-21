@@ -37,12 +37,13 @@ class render extends Feature {
         $this->alg = 'SHA-512';
         $this->enc = 'B64';
         $this->encInit = 'TEXT';
+        $this->GoogleApiKey = $this->get_option("google_api_key"); // this needs to be coming from options
     }
 
     function registerScriptsAndStyles() {
         $lang = substr(get_bloginfo('language'), 0, 2);
 
-        wp_register_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyACeY96O194ywiXvns2lLcSp15e6VcBQBg&libraries=places&language='.$lang, array(), false, true );
+        wp_register_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key='.$this->GoogleApiKey.'&libraries=places&language='.$lang, array(), false, true );
         wp_register_script('recaptcha', 'https://www.google.com/recaptcha/api.js?hl='.$lang, array(), false, true );
 
         wp_enqueue_style( 'casawp-lg-front', PLUGIN_URL . 'assets/css/casawp-lg-front.css', array(), '1', 'screen' );

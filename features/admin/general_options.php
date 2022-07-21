@@ -139,6 +139,14 @@ class general_options extends Feature
             'clg_1'
         );
 
+        add_settings_field(
+            'google_api_key',
+            __( 'Google Api Key', 'casawplg' ),
+            array( $this, 'google_api_key_callback' ),
+            'casawp-lg-admin',
+            'clg_1'
+        );
+
 /*
         add_settings_field(
             'remcat',
@@ -170,6 +178,10 @@ class general_options extends Feature
 
         if( isset( $input['iazievaluation_key'] ) ) {
             $new_input['iazievaluation_key'] = sanitize_text_field( $input['iazievaluation_key'] );
+        }
+
+        if( isset( $input['google_api_key'] ) ) {
+            $new_input['google_api_key'] = sanitize_text_field( $input['google_api_key'] );
         }
 
         if( isset( $input['global_direct_recipient_email'] ) ) {
@@ -224,6 +236,14 @@ class general_options extends Feature
         printf(
             '<input type="text" id="iazievaluation_key" name="casawp_lg[iazievaluation_key]" value="%s" />',
             isset( $this->options['iazievaluation_key'] ) ? esc_attr( $this->options['iazievaluation_key']) : ''
+        );
+    }
+
+    public function google_api_key_callback()
+    {
+        printf(
+            '<input type="text" id="google_api_key" name="casawp_lg[google_api_key]" value="%s" />',
+            isset( $this->options['google_api_key'] ) ? esc_attr( $this->options['google_api_key']) : 'AIzaSyACeY96O194ywiXvns2lLcSp15e6VcBQBg'
         );
     }
 
