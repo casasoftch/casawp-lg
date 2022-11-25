@@ -17,8 +17,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Psalm
-        uses: docker://ghcr.io/psalm/psalm-security-scan
+      - name: Psalm Security Scan
+        uses: docker://ghcr.io/psalm/psalm-security-scan:4.2.1
         with:
           security_analysis: true
           report_file: results.sarif
