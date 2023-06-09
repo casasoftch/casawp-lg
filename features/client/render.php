@@ -566,7 +566,7 @@ class render extends Feature {
         $curl = curl_init();
         $hash = base64_encode(hash('sha512', $x.$t.$z, true));
         $testUrl = "https://test.iazi.ch/api/apphedolight/v1/verifycaptcha";
-        $liveUrl = "https://api.iazi.ch/api/hedolight/v1/verifyCaptcha";
+        $liveUrl = "https://prod.iazi.ch/api/apphedolight/v1/verifyCaptcha";
         $query = '?response='.$captchaResponse;
 
         //die($query);
