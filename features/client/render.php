@@ -147,16 +147,35 @@ class render extends Feature {
                             print('There was an error with captcha');
                         }
                     } else {
-                        $casamail_msgs = $this->sendCasamail($inquiry, $formData, false, false);
-                        if ($casamail_msgs) {
-                            $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
-                            $state = 'danger';
-                        }
+                        if (get_option('casawp_recaptcha')) {
+                            $validCaptcha = null;
+                            if (isset($_POST['g-recaptcha-response'])) {
+                                $validCaptcha = $this->verifyCaptcha($_POST['g-recaptcha-response']);
+                            }
+                            if ($validCaptcha &&  $validCaptcha === 'success') {
+                                $casamail_msgs = $this->sendCasamail($inquiry, $formData, false, false);
+                                if ($casamail_msgs) {
+                                    $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
+                                    $state = 'danger';
+                                }
                         
-                        do_action('clg_after_inquirysend', $formData);
+                                do_action('clg_after_inquirysend', $formData);
                     
-                        //empty form
-                        $formData = $this->getFormData(true);
+                                //empty form
+                                $formData = $this->getFormData(true);
+                            }
+                        } else {
+                            $casamail_msgs = $this->sendCasamail($inquiry, $formData, false, false);
+                            if ($casamail_msgs) {
+                                $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
+                                $state = 'danger';
+                            }
+                        
+                            do_action('clg_after_inquirysend', $formData);
+                    
+                            //empty form
+                            $formData = $this->getFormData(true);
+                        }
                     }
                 }
             } else {
@@ -180,6 +199,9 @@ class render extends Feature {
         
     }
 
+    public function escapeJavaScriptText($string){
+        return str_replace("\n", '\n', str_replace('"', '\"', addcslashes(str_replace("\r", '', (string)$string), "\0..\37'\\")));
+    }
 
     public function getFormData($empty = false) {
         
@@ -614,6 +636,43 @@ class render extends Feature {
                 return false;
             }
         }
+    }
+
+    private function verifyCaptcha($captchaResponse) {
+        $is_recaptcha_v3 = true;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, [
+            'secret' => get_option('casawp_recaptcha_secret'),
+            'response' => $captchaResponse,
+            'remoteip' => $_SERVER['REMOTE_ADDR']
+        ]);
+
+        $response = json_decode(curl_exec($ch));
+        curl_close($ch);
+
+        $this->addToLogFormStuff('V3?: ' . $is_recaptcha_v3 . ' Success: ' . $response->success . ' Score: ' . $response->score . ' Score defined: ' . get_option('casawp_recaptcha_v3_score'));
+
+        if (empty($response->success) || ($is_recaptcha_v3 && $response->score <= get_option('casawp_recaptcha_v3_score', '0.4'))) {
+            // Fail
+            //throw new \Exception('Gah! CAPTCHA verification failed.', 1);
+            return 'fail';
+        } else {
+            // Success
+            return 'success';
+        }
+    }
+
+    public function addToLogFormStuff($transcript){
+        $dir = CASASYNC_CUR_UPLOAD_BASEDIR  . '/casawplg/logsformstuff';
+        if (!file_exists($dir)) {
+            mkdir($dir, 0777, true);
+        }
+        file_put_contents($dir."/".get_date_from_gmt('', 'Ym').'.log', "\n".json_encode(array(get_date_from_gmt('', 'Y-m-d H:i') => $transcript)), FILE_APPEND);
     }
 
 }

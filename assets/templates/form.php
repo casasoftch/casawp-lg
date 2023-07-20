@@ -448,7 +448,37 @@
                                             </div>';
                                     echo apply_filters('clg_render_contactform', $html);
                                 ?>
+                                <?php if(isset(get_option('casawp_lg')['casawp_recaptcha']) && get_option('casawp_lg')['casawp_recaptcha']): ?>
+                                    <div class="g-recaptcha-v3" data-sitekey="<?php echo get_option('casawp_lg')['casawp_recaptcha'] ?>"></div>
+                                    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo get_option('casawp_lg')['casawp_recaptcha'] ?>"></script>
+                                    <input type="hidden" id="gRecaptchaResponse" name="g-recaptcha-response">
+                                    <script>
+                                        window.captchaKey = '<?php echo escapeJavaScriptText(get_option('casawp_lg')['casawp_recaptcha']); ?>';
+                                    </script>
+                                    <script>
 
+                                        var form = document.getElementById("clgFormAnchor");
+
+                                        form.addEventListener('submit', event => {
+                                            event.preventDefault()
+                                            validate(form)
+                                        });
+
+                                        function validate(form) {
+                                            getRecaptchaToken(form)
+                                        }
+
+                                        function getRecaptchaToken(form) {
+                                            grecaptcha.ready(function() {
+                                                grecaptcha.execute(window.captchaKey, {action: 'clgFormAnchor'}).then(function(token) {
+                                                    gRecaptchaResponse.value = token //set the value of the hidden field
+                                                    form.submit() //submit the form
+                                                });
+                                            });
+                                        }
+			
+                                    </script>
+                                <?php endif ?>
                                 <div class="casawp-lg_buttons multi_buttons">
                                     <?php 
                                         $html = '<a href="#" class="btn btn-primary btn-backward">

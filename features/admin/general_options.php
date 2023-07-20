@@ -147,6 +147,31 @@ class general_options extends Feature
             'clg_1'
         );
 
+        add_settings_field(
+            'casawp_recaptcha',
+             __( 'Google reCAPTCHA Key', 'casawplg' ),
+            array( $this, 'casawp_recaptcha_callback' ),
+            'casawp-lg-admin',
+            'clg_1'
+        );
+
+        add_settings_field(
+            'casawp_recaptcha_secret',
+             __( 'Google reCAPTCHA Secret', 'casawplg' ),
+            array( $this, 'casawp_recaptcha_secret_callback' ),
+            'casawp-lg-admin',
+            'clg_1'
+        );
+
+        add_settings_field(
+            'casawp_recaptcha_v3_score',
+             __( 'Google reCAPTCHA Score', 'casawplg' ),
+            array( $this, 'casawp_recaptcha_v3_score_callback' ),
+            'casawp-lg-admin',
+            'clg_1'
+        );
+    
+
 /*
         add_settings_field(
             'remcat',
@@ -194,6 +219,18 @@ class general_options extends Feature
 
         if( isset( $input['publisher_slug'] ) ) {
             $new_input['publisher_slug'] = sanitize_text_field( $input['publisher_slug'] );
+        }
+
+        if( isset( $input['casawp_recaptcha'] ) ) {
+            $new_input['casawp_recaptcha'] = sanitize_text_field( $input['casawp_recaptcha'] );
+        }
+
+        if( isset( $input['casawp_recaptcha_secret'] ) ) {
+            $new_input['casawp_recaptcha_secret'] = sanitize_text_field( $input['casawp_recaptcha_secret'] );
+        }
+
+        if( isset( $input['casawp_recaptcha_v3_score'] ) ) {
+            $new_input['casawp_recaptcha_v3_score'] = sanitize_text_field( $input['casawp_recaptcha_v3_score'] );
         }
 
        /* if( isset( $input['remcat'] ) ) {
@@ -268,6 +305,30 @@ class general_options extends Feature
         printf(
             '<input type="text" id="publisher_slug" name="casawp_lg[publisher_slug]" value="%s" />',
             isset( $this->options['publisher_slug'] ) ? esc_attr( $this->options['publisher_slug']) : ''
+        );
+    }
+
+    public function casawp_recaptcha_callback()
+    {
+        printf(
+            '<input type="text" id="casawp_recaptcha" name="casawp_lg[casawp_recaptcha]" value="%s" />',
+            isset( $this->options['casawp_recaptcha'] ) ? esc_attr( $this->options['casawp_recaptcha']) : ''
+        );
+    }
+
+    public function casawp_recaptcha_secret_callback()
+    {
+        printf(
+            '<input type="text" id="casawp_recaptcha_secret" name="casawp_lg[casawp_recaptcha_secret]" value="%s" />',
+            isset( $this->options['casawp_recaptcha_secret'] ) ? esc_attr( $this->options['casawp_recaptcha_secret']) : ''
+        );
+    }
+
+    public function casawp_recaptcha_v3_score_callback()
+    {
+        printf(
+            '<input type="number" id="casawp_recaptcha_v3_score" step="0.1" name="casawp_lg[casawp_recaptcha_v3_score]" value="%s" />',
+            isset( $this->options['casawp_recaptcha_v3_score'] ) ? esc_attr( $this->options['casawp_recaptcha_v3_score']) : '0.4'
         );
     }
 
