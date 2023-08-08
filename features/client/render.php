@@ -655,9 +655,9 @@ class render extends Feature {
         $response = json_decode(curl_exec($ch));
         curl_close($ch);
 
-        $this->addToLogFormStuff('V3?: ' . $is_recaptcha_v3 . ' Success: ' . $response->success . ' Score: ' . $response->score . ' Score defined: ' . get_option('casawp_recaptcha_v3_score'));
+        //$this->addToLogFormStuff('V3?: ' . $is_recaptcha_v3 . ' Success: ' . $response->success . ' Score: ' . $response->score . ' Score defined: ' . get_option('casawp_recaptcha_v3_score'));
 
-        if (empty($response->success) || ($is_recaptcha_v3 && $response->score <= get_option('casawp_recaptcha_v3_score', '0.4'))) {
+        if (empty($response->success) || ($is_recaptcha_v3 && (!isset($response->score) || $response->score <= get_option('casawp_recaptcha_v3_score', '0.4')))) {
             // Fail
             //throw new \Exception('Gah! CAPTCHA verification failed.', 1);
             return 'fail';
