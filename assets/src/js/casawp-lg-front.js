@@ -134,7 +134,7 @@ jQuery( function () {
 			if ($('input[name="extra_data[propertyType]"]:checked').val() == 'single-family-house') {
 				$('#casawp-lg-property-surface').parent().show();
 				$('#casawp-lg-bathroom').parent().hide();
-			} else {
+			} else if($('input[name="extra_data[propertyType]"]:checked').val() == 'flat') {
 				$('#casawp-lg-property-surface').parent().hide();
 				$('#casawp-lg-bathroom').parent().show();
 			}
