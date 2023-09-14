@@ -543,8 +543,14 @@
                                         <div class="col-lg-12">
                                             <div class="casawp_centerslide">
                                                 <?php 
-                                                    $html = '<h2>' . __('The valuation was successfully completed', 'casawplg') . '</h2>
-                                                               <p>' . __('You will shortly receive the valuation information via email.', 'casawplg') . '</p>';
+                                                    if (get_option('casawp_lg')['iazievaluation_key']) {
+                                                        $html = '<h2>' . __('The valuation was successfully completed', 'casawplg') . '</h2>
+                                                           <p>' . __('You will shortly receive the valuation information via email.', 'casawplg') . '</p>';
+                                                    } else {
+                                                        $html = '<h2>' . __('Thank you!', 'casawplg') . '</h2>
+                                                        <p>' . __('Your valuation request has been successfully submitted.', 'casawplg') . '</p>';
+                                                    }
+                                                    
                                                     echo apply_filters('clg_render_sentmessage', $html);
                                                 ?>
                                             </div>
