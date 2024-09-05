@@ -149,7 +149,7 @@ class general_options extends Feature
 
         add_settings_field(
             'casawp_recaptcha',
-             __( 'Google reCAPTCHA Key', 'casawplg' ),
+             __( 'Google reCAPTCHA Key (Only needed if no IAZI API!!)', 'casawplg' ),
             array( $this, 'casawp_recaptcha_callback' ),
             'casawp-lg-admin',
             'clg_1'
@@ -157,7 +157,7 @@ class general_options extends Feature
 
         add_settings_field(
             'casawp_recaptcha_secret',
-             __( 'Google reCAPTCHA Secret', 'casawplg' ),
+             __( 'Google reCAPTCHA Secret (Only needed if no IAZI API!!)', 'casawplg' ),
             array( $this, 'casawp_recaptcha_secret_callback' ),
             'casawp-lg-admin',
             'clg_1'
@@ -165,7 +165,7 @@ class general_options extends Feature
 
         add_settings_field(
             'casawp_recaptcha_v3_score',
-             __( 'Google reCAPTCHA Score', 'casawplg' ),
+             __( 'Google reCAPTCHA Score (Only needed if no IAZI API!!)', 'casawplg' ),
             array( $this, 'casawp_recaptcha_v3_score_callback' ),
             'casawp-lg-admin',
             'clg_1'
