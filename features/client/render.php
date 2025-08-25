@@ -106,18 +106,18 @@ class render extends Feature {
                     $msg = __('Inquiry has been sent. Thank you!', 'casawplg');
                     $state = 'success';
 
-                    $inq_post = array(
+                    /* $inq_post = array(
                         'post_content'   => '',
                         'post_title'     => $formData['first_name'] . ' ' . $formData['last_name'],
                         'post_status'    => 'publish',
                         'post_type'      => 'casawplg_inquiry',
                         'ping_status'    => 'closed',
                         'comment_status' => 'closed',
-                    );
+                    ); */
 
                     do_action('clg_before_inquirystore', $formData);
 
-                    $inquiry = $this->storeInquiry($inq_post, $formData);
+                    #$inquiry = $this->storeInquiry($inq_post, $formData);
 
                     do_action('clg_before_inquirysend', $formData);
 
@@ -153,7 +153,7 @@ class render extends Feature {
                                 $validCaptcha = $this->verifyCaptcha($_POST['g-recaptcha-response']);
                             }
                             if ($validCaptcha &&  $validCaptcha === 'success') {
-                                $casamail_msgs = $this->sendCasamail($inquiry, $formData, false, false);
+                                $casamail_msgs = $this->sendCasamail(null, $formData, false, false);
                                 if ($casamail_msgs) {
                                     $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
                                     $state = 'danger';
@@ -165,7 +165,7 @@ class render extends Feature {
                                 $formData = $this->getFormData(true);
                             }
                         } else {
-                            $casamail_msgs = $this->sendCasamail($inquiry, $formData, false, false);
+                            $casamail_msgs = $this->sendCasamail(null, $formData, false, false);
                             if ($casamail_msgs) {
                                 $msg .= 'CASAMAIL Fehler: '. print_r($casamail_msgs, true);
                                 $state = 'danger';
@@ -243,7 +243,7 @@ class render extends Feature {
 
     public $fieldMessages = array();
     public function addFieldValidationMessage($col, $message) {
-        $this->fieldMessages = $fieldMessages;
+        //$this->fieldMessages = $fieldMessages;
         $this->fieldMessages[$col] = $message;
     }
     public $requiredFields = array(
@@ -333,19 +333,16 @@ class render extends Feature {
 
             //CASAMAIL
             $data                = array();
-            $data['firstname']   = get_clg($inquiry->ID, 'first_name');
-            $data['lastname']    = get_clg($inquiry->ID, 'last_name');
-            $gender = get_clg($inquiry->ID, 'gender');
-            if ($gender == 'female') {
-                $data['gender']      = 2;
-            } elseif ($gender == 'male') {
-                $data['gender']      = 1;
+            $data['firstname'] = isset($formData['first_name']) ? $formData['first_name'] : '';
+            $data['lastname']  = isset($formData['last_name']) ? $formData['last_name'] : '';
+            $gender = isset($formData['gender']) ? $formData['gender'] : null;
+            if ($gender === 'female') {
+                $data['gender'] = 2;
+            } elseif ($gender === 'male') {
+                $data['gender'] = 1;
             }
-            //$data['country']     = 'CH';
-            $data['mobile']       = get_clg($inquiry->ID, 'mobile');
-            //$data['mobile']       = '000 000 00 00';
-            //$data['fax']       = '000 000 00 00';
-            $data['email']       = get_clg($inquiry->ID, 'email');
+            $data['mobile'] = isset($formData['mobile']) ? $formData['mobile'] : (isset($formData['phone']) ? $formData['phone'] : '');
+            $data['email']  = isset($formData['email']) ? $formData['email'] : '';
 
             $data['provider']               = $provider; //must be registered at CASAMAIL
             $data['publisher']              = $publisher; //must be registered at CASAMAIL
