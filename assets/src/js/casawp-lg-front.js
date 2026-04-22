@@ -149,10 +149,10 @@ jQuery( function () {
 	        });
 
 	        // Create the search box and link it to the UI element.
-	        var card = document.getElementById('pac-card');
 	        var input = document.getElementById('pac-input');
 	        var searchBox = new google.maps.places.SearchBox(input);
-	        map.controls[google.maps.ControlPosition.TOP_CENTER].push(card);
+	        // Keep the input in the regular DOM instead of moving it into the
+	        // map controls. iOS Safari can fail to open the keyboard otherwise.
 
 	        // Bias the SearchBox results towards current map's viewport.
 	        map.addListener('bounds_changed', function() {

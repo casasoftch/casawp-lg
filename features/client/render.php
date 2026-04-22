@@ -46,8 +46,8 @@ class render extends Feature {
         wp_register_script('google_maps_v3', 'https://maps.googleapis.com/maps/api/js?key='.$this->GoogleApiKey.'&libraries=places&language='.$lang, array(), false, true );
         wp_register_script('recaptcha', 'https://www.google.com/recaptcha/api.js?hl='.$lang, array(), false, true );
 
-        wp_enqueue_style( 'casawp-lg-front', PLUGIN_URL . 'assets/css/casawp-lg-front.css', array(), '1', 'screen' );
-        wp_register_script( 'casawp-lg-front', PLUGIN_URL . 'assets/js/casawp-lg-front.min.js', array('jquery'), '8');
+        wp_enqueue_style( 'casawp-lg-front', PLUGIN_URL . 'assets/css/casawp-lg-front.css', array(), '2', 'screen' );
+        wp_register_script( 'casawp-lg-front', PLUGIN_URL . 'assets/js/casawp-lg-front.min.js', array('jquery'), '9');
         wp_register_script( 'moment', PLUGIN_URL . 'assets/js/moment.min.js');
     }
 
