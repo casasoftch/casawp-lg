@@ -150,6 +150,10 @@ jQuery( function () {
 
 	        // Create the search box and link it to the UI element.
 	        var input = document.getElementById('pac-input');
+	        input.setAttribute('autocomplete', 'off');
+	        input.setAttribute('autocorrect', 'off');
+	        input.setAttribute('autocapitalize', 'off');
+	        input.setAttribute('spellcheck', 'false');
 	        var searchBox = new google.maps.places.SearchBox(input);
 	        // Keep the input in the regular DOM instead of moving it into the
 	        // map controls. iOS Safari can fail to open the keyboard otherwise.

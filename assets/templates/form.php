@@ -154,7 +154,7 @@
                                                 <div class="casawp-lg_searchboxwrapper" id="pac-card">
                                                     <h3>'.__('Where is your property located?', 'casawplg').'</h3>
                                                     <div class="casawp-lg_searchboxinput">
-                                                        <input id="pac-input" required class="controls" type="text" placeholder="'.__('Address, city, zip code', 'casawplg').'">
+                                                        <input id="pac-input" required class="controls" type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="'.__('Address, city, zip code', 'casawplg').'">
                                                     </div>
                                                 </div>
                                                 <div id="casawp-lg_map"></div>
